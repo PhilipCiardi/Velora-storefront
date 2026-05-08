@@ -11,16 +11,22 @@ app.mount("/frontend", StaticFiles(directory="../frontend"), name="frontend")
 async def home():
     return FileResponse("../frontend/index.html")
 
-@app.get("/dark")
-async def dark():
-    return FileResponse("../frontend/dark.html")
+
+@app.get("/shop")
+async def shop():
+    return FileResponse("../frontend/shop.html")
 
 
-@app.get("/clean")
-async def clean():
-    return FileResponse("../frontend/clean.html")
+@app.get("/trending")
+async def trending():
+    return FileResponse("../frontend/trending.html")
 
 
-@app.get("/warm")
-async def warm():
-    return FileResponse("../frontend/warm.html")
+@app.get("/new-drops")
+async def new_drops():
+    return FileResponse("../frontend/new-drops.html")
+
+
+@app.get("/contact")
+async def contact():
+    return FileResponse("../frontend/contact.html")
