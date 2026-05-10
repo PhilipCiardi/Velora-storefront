@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <title>VELORA | Shop</title>
 
@@ -17,80 +17,84 @@
 
     <main class="page-shell">
 
-        <section class="hero-section">
+        <section class="hero-section shop-hero">
 
             <nav class="top-nav">
-                <a href="/" class="logo">VELORA</a>
+
+                <a href="/" class="logo">
+                    Velora
+                </a>
 
                 <div class="top-links">
-                    <a href="/shop">SHOP</a>
-                    <a href="/trending">TRENDING</a>
-                    <a href="/new-drops">NEW DROPS</a>
-                    <a href="/contact">CONTACT</a>
-                    <a href="#" class="cart">BAG 0</a>
+
+                    <a href="/">
+                        HOME
+                    </a>
+
+                    <a href="/shop" class="active">
+                        SHOP
+                    </a>
+
+                    <a href="/trending">
+                        TRENDING
+                    </a>
+
+                    <a href="/contact">
+                        CONTACT
+                    </a>
+
+                    <a href="/cart" class="cart" aria-label="Cart">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/>
+                            <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/>
+                        </svg>
+                    </a>
+
                 </div>
+
             </nav>
 
             <div class="hero-center">
-                <span class="hero-tag">ALL PRODUCTS</span>
 
                 <h1>
                     SHOP THE EDIT.
                 </h1>
 
                 <p>
-                    Explore selected products with premium presentation,
-                    modern aesthetics and trend-focused appeal.
+                    Explore selected products made for travel, summer moments,
+                    everyday lifestyle and modern convenience.
                 </p>
 
-                <a href="/new-drops" class="outline-btn">
-                    VIEW NEW DROPS
+                <a href="/trending" class="outline-btn">
+                    VIEW TRENDING
                 </a>
+
             </div>
 
         </section>
 
-        <section class="store-section">
+        <section class="shop-page-section">
 
-            <aside class="side-panel">
+            <div class="shop-header">
 
                 <div>
-                    <div class="search-box">
-                        <span>⌕</span>
-
-                        <input
-                            type="text"
-                            placeholder="SEARCH"
-                        >
-                    </div>
-
-                    <nav class="side-menu">
-                        <a href="/">HOME</a>
-                        <a href="/shop" class="active">SHOP</a>
-                        <a href="/trending">TRENDING</a>
-                        <a href="/new-drops">NEW DROPS</a>
-                        <a href="/contact">CONTACT</a>
-                    </nav>
-                </div>
-
-                <div class="newsletter">
-                    <p>JOIN OUR NEWSLETTER</p>
-
-                    <span>
-                        Get early access to new drops and trending products.
+                    <span class="section-kicker">
+                        VELORA PRODUCTS
                     </span>
 
-                    <div class="email-row">
-                        <input
-                            type="email"
-                            placeholder="Your email"
-                        >
-                    </div>
+                    <h2>
+                        Curated essentials
+                    </h2>
                 </div>
 
-            </aside>
+                <p>
+                    A small edit of products selected for clean design,
+                    impulse appeal and everyday usefulness.
+                </p>
 
-            <section class="product-showcase">
+            </div>
+
+            <section class="shop-grid">
 
                 <article class="product-card">
                     <div class="product-image-wrap">
@@ -98,22 +102,14 @@
                             src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1974&auto=format&fit=crop"
                             alt="Luma Mirror"
                         >
-
-                        <span class="quick-view">
-                            QUICK VIEW
-                        </span>
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
 
                     <div class="product-info">
                         <div>
                             <span class="product-label">TRENDING</span>
-
                             <h2>LUMA MIRROR</h2>
-
-                            <p class="product-desc">
-                                Soft glow vanity mirror
-                            </p>
-
+                            <p class="product-desc">Soft glow vanity mirror</p>
                             <p class="price">$69.00</p>
                         </div>
                     </div>
@@ -125,22 +121,14 @@
                             src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop"
                             alt="Solene Tote"
                         >
-
-                        <span class="quick-view">
-                            QUICK VIEW
-                        </span>
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
 
                     <div class="product-info">
                         <div>
-                            <span class="product-label">NEW DROP</span>
-
+                            <span class="product-label">NEW</span>
                             <h2>SOLENE TOTE</h2>
-
-                            <p class="product-desc">
-                                Minimal everyday carry
-                            </p>
-
+                            <p class="product-desc">Minimal everyday carry</p>
                             <p class="price">$89.00</p>
                         </div>
                     </div>
@@ -152,23 +140,72 @@
                             src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1974&auto=format&fit=crop"
                             alt="Aurel Case"
                         >
-
-                        <span class="quick-view">
-                            QUICK VIEW
-                        </span>
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
 
                     <div class="product-info">
                         <div>
                             <span class="product-label">BESTSELLER</span>
-
                             <h2>AUREL CASE</h2>
-
-                            <p class="product-desc">
-                                Statement protection piece
-                            </p>
-
+                            <p class="product-desc">Statement protection piece</p>
                             <p class="price">$49.00</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img
+                            src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1974&auto=format&fit=crop"
+                            alt="Aura Shades"
+                        >
+                        <span class="quick-view">QUICK VIEW</span>
+                    </div>
+
+                    <div class="product-info">
+                        <div>
+                            <span class="product-label">SUMMER</span>
+                            <h2>AURA SHADES</h2>
+                            <p class="product-desc">Lightweight summer frames</p>
+                            <p class="price">$39.00</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img
+                            src="https://images.unsplash.com/photo-1526045478516-99145907023c?q=80&w=2080&auto=format&fit=crop"
+                            alt="Glow Roller"
+                        >
+                        <span class="quick-view">QUICK VIEW</span>
+                    </div>
+
+                    <div class="product-info">
+                        <div>
+                            <span class="product-label">SELFCARE</span>
+                            <h2>GLOW ROLLER</h2>
+                            <p class="product-desc">Cooling morning ritual</p>
+                            <p class="price">$29.00</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-wrap">
+                        <img
+                            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop"
+                            alt="Travel Set"
+                        >
+                        <span class="quick-view">QUICK VIEW</span>
+                    </div>
+
+                    <div class="product-info">
+                        <div>
+                            <span class="product-label">TRAVEL</span>
+                            <h2>TRAVEL SET</h2>
+                            <p class="product-desc">Compact summer organizer</p>
+                            <p class="price">$45.00</p>
                         </div>
                     </div>
                 </article>

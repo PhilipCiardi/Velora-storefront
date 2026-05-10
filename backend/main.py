@@ -22,11 +22,11 @@ async def trending():
     return FileResponse("../frontend/trending.html")
 
 
-@app.get("/new-drops")
-async def new_drops():
-    return FileResponse("../frontend/new-drops.html")
-
-
 @app.get("/contact")
 async def contact():
     return FileResponse("../frontend/contact.html")
+
+
+@app.get("/cart")
+async def cart():
+    return FileResponse("../frontend/cart.html")
