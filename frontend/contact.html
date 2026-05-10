@@ -1,174 +1,88 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - VELORA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <title>VELORA | Contact</title>
-
-    <link
-        rel="stylesheet"
-        href="/frontend/style.css"
-    >
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
     <main class="page-shell">
 
         <section class="hero-section contact-hero">
-
             <nav class="top-nav">
-
-                <a href="/" class="logo">
-                    Velora
-                </a>
-
+                <a href="index.html" class="logo">Velora</a>
                 <div class="top-links">
-
-                    <a href="/">
-                        HOME
-                    </a>
-
-                    <a href="/shop">
-                        SHOP
-                    </a>
-
-                    <a href="/trending">
-                        TRENDING
-                    </a>
-
-                    <a href="/contact" class="active">
-                        CONTACT
-                    </a>
-
-                    <a
-                        href="/cart"
-                        class="cart"
-                        aria-label="Cart"
-                    >
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                        >
-
-                            <path
-                                d="M6 8h12l-1 12H7L6 8Z"
-                                stroke="currentColor"
-                                stroke-width="1.7"
-                            />
-
-                            <path
-                                d="M9 8V6a3 3 0 0 1 6 0v2"
-                                stroke="currentColor"
-                                stroke-width="1.7"
-                            />
-
+                    <a href="index.html">HOME</a>
+                    <a href="shop.html">SHOP</a>
+                    <a href="trending.html">TRENDING</a>
+                    <a href="contact.html" class="active">CONTACT</a>
+                    <a href="checkout.html" class="cart" aria-label="Cart">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/>
+                            <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/>
                         </svg>
-
+                        <span class="cart-count">0</span>
                     </a>
-
                 </div>
-
             </nav>
 
             <div class="hero-center">
-
-                <h1>
-                    CONTACT US.
-                </h1>
-
-                <p>
-                    Questions, support or collaboration inquiries.
-                    We usually respond within 24 hours.
-                </p>
-
+                <h1>GET IN TOUCH</h1>
+                <p>Questions, collaborations or just want to say hi — we're here.</p>
             </div>
-
         </section>
 
         <section class="contact-section">
-
             <div class="contact-card">
 
                 <div class="contact-left">
-
-                    <span class="section-kicker">
-                        GET IN TOUCH
-                    </span>
-
-                    <h2>
-                        We’d love to hear from you
-                    </h2>
-
-                    <p>
-                        Velora is built around curated products,
-                        modern ecommerce and clean design.
-                    </p>
-
+                    <h2>Let's Talk.</h2>
+                    <p>We typically respond within 24 hours. For order-related questions, please have your order number ready.</p>
                     <div class="contact-details">
-
                         <div>
-                            <span>Email</span>
-                            <p>support@velora.store</p>
+                            <span>EMAIL</span>
+                            <p>hello@velora.store</p>
                         </div>
-
                         <div>
-                            <span>Instagram</span>
-                            <p>@velorastore</p>
+                            <span>HOURS</span>
+                            <p>Mon – Fri, 9am – 5pm CET</p>
                         </div>
-
+                        <div>
+                            <span>RETURNS</span>
+                            <p>30-day hassle-free returns</p>
+                        </div>
                     </div>
-
                 </div>
 
-                <form class="contact-form">
-
-                    <input
-                        type="text"
-                        placeholder="Your name"
-                    >
-
-                    <input
-                        type="email"
-                        placeholder="Your email"
-                    >
-
-                    <textarea
-                        placeholder="Your message"
-                    ></textarea>
-
-                    <button type="submit">
-                        SEND MESSAGE
-                    </button>
-
-                </form>
+                <div class="contact-form">
+                    <input type="text" placeholder="Your name">
+                    <input type="email" placeholder="Your email">
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="Your message..."></textarea>
+                    <button type="button" onclick="handleContactSubmit(this)">SEND MESSAGE</button>
+                </div>
 
             </div>
-
         </section>
 
     </main>
 
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function handleContactSubmit(btn) {
+            btn.textContent = 'SENT ✓';
+            btn.style.background = 'rgba(255,255,255,0.7)';
+            setTimeout(() => {
+                btn.textContent = 'SEND MESSAGE';
+                btn.style.background = '';
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

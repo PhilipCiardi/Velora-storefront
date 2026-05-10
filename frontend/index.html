@@ -1,331 +1,131 @@
-<!-- frontend/index.html -->
-
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VELORA</title>
-
-    <link
-        rel="stylesheet"
-        href="/frontend/style.css"
-    >
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
     <main class="page-shell">
 
         <section class="hero-section">
-
             <nav class="top-nav">
-
-                <a href="/" class="logo">
-                    Velora
-                </a>
-
+                <a href="index.html" class="logo">Velora</a>
                 <div class="top-links">
-
-                    <a href="/" class="active">
-                        HOME
-                    </a>
-
-                    <a href="/shop">
-                        SHOP
-                    </a>
-
-                    <a href="/trending">
-                        TRENDING
-                    </a>
-
-                    <a href="/contact">
-                        CONTACT
-                    </a>
-
-                    <a
-                        href="/cart"
-                        class="cart"
-                        aria-label="Cart"
-                    >
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                        >
-
-                            <path
-                                d="M6 8h12l-1 12H7L6 8Z"
-                                stroke="currentColor"
-                                stroke-width="1.7"
-                            />
-
-                            <path
-                                d="M9 8V6a3 3 0 0 1 6 0v2"
-                                stroke="currentColor"
-                                stroke-width="1.7"
-                            />
-
+                    <a href="index.html" class="active">HOME</a>
+                    <a href="shop.html">SHOP</a>
+                    <a href="trending.html">TRENDING</a>
+                    <a href="contact.html">CONTACT</a>
+                    <a href="checkout.html" class="cart" aria-label="Cart">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/>
+                            <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/>
                         </svg>
-
+                        <span class="cart-count">0</span>
                     </a>
-
                 </div>
-
             </nav>
 
-            <button class="arrow left-arrow">
-                ‹
-            </button>
-
-            <button class="arrow right-arrow">
-                ›
-            </button>
+            <button class="arrow left-arrow">‹</button>
+            <button class="arrow right-arrow">›</button>
 
             <div class="hero-center">
-
-                <h1>
-                    PRODUCTS PEOPLE
-                    NOTICE.
-                </h1>
-
-                <p>
-                    A curated storefront for trending products,
-                    premium aesthetics and modern shopping experiences.
-                </p>
-
-                <a href="/shop" class="outline-btn">
-                    SHOP NOW
-                </a>
-
+                <h1>PRODUCTS PEOPLE NOTICE.</h1>
+                <p>A curated storefront for trending products, premium aesthetics and modern shopping experiences.</p>
+                <a href="shop.html" class="outline-btn">SHOP NOW</a>
             </div>
 
             <div class="slider-lines">
-
                 <span class="active"></span>
-
                 <span></span>
-
                 <span></span>
-
             </div>
-
         </section>
 
         <section class="store-section">
-
             <aside class="side-panel">
-
                 <div>
-
                     <div class="search-box">
-
-                        <span>
-                            ⌕
-                        </span>
-
-                        <input
-                            type="text"
-                            placeholder="SEARCH"
-                        >
-
+                        <span>⌕</span>
+                        <input type="text" placeholder="SEARCH">
                     </div>
-
                     <nav class="side-menu">
-
-                        <a href="/" class="active">
-                            HOME
-                        </a>
-
-                        <a href="/shop">
-                            SHOP
-                        </a>
-
-                        <a href="/trending">
-                            TRENDING
-                        </a>
-
-                        <a href="/contact">
-                            CONTACT
-                        </a>
-
+                        <a href="index.html" class="active">HOME</a>
+                        <a href="shop.html">SHOP</a>
+                        <a href="trending.html">TRENDING</a>
+                        <a href="contact.html">CONTACT</a>
                     </nav>
-
                 </div>
-
                 <div class="newsletter">
-
-                    <p>
-                        JOIN OUR NEWSLETTER
-                    </p>
-
-                    <span>
-                        Get early access to new drops and trending products.
-                    </span>
-
+                    <p>JOIN OUR NEWSLETTER</p>
+                    <span>Get early access to new drops and trending products.</span>
                     <div class="email-row">
-
-                        <input
-                            type="email"
-                            placeholder="Your email"
-                        >
-
+                        <input type="email" placeholder="Your email">
                     </div>
-
                 </div>
-
             </aside>
 
             <section class="product-showcase">
 
-                <article class="product-card">
-
+                <article class="product-card" data-product-id="1">
                     <div class="product-image-wrap">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1974&auto=format&fit=crop"
-                            alt="Luma Mirror"
-                        >
-
-                        <span class="quick-view">
-                            QUICK VIEW
-                        </span>
-
+                        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1974&auto=format&fit=crop" alt="Luma Mirror">
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
-
                     <div class="product-info">
-
                         <div>
-
-                            <span class="product-label">
-                                TRENDING
-                            </span>
-
-                            <h2>
-                                LUMA MIRROR
-                            </h2>
-
-                            <p class="product-desc">
-                                Soft glow vanity mirror
-                            </p>
-
-                            <p class="price">
-                                $69.00
-                            </p>
-
+                            <span class="product-label">TRENDING</span>
+                            <h2>LUMA MIRROR</h2>
+                            <p class="product-desc">Soft glow vanity mirror</p>
+                            <p class="price">$69.00</p>
                         </div>
-
+                        <button class="add-to-cart-btn" onclick="addToCart(1)">ADD TO CART</button>
                     </div>
-
                 </article>
 
-                <article class="product-card">
-
+                <article class="product-card" data-product-id="2">
                     <div class="product-image-wrap">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop"
-                            alt="Solene Tote"
-                        >
-
-                        <span class="quick-view">
-                            QUICK VIEW
-                        </span>
-
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop" alt="Solene Tote">
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
-
                     <div class="product-info">
-
                         <div>
-
-                            <span class="product-label">
-                                NEW
-                            </span>
-
-                            <h2>
-                                SOLENE TOTE
-                            </h2>
-
-                            <p class="product-desc">
-                                Minimal everyday carry
-                            </p>
-
-                            <p class="price">
-                                $89.00
-                            </p>
-
+                            <span class="product-label">NEW</span>
+                            <h2>SOLENE TOTE</h2>
+                            <p class="product-desc">Minimal everyday carry</p>
+                            <p class="price">$89.00</p>
                         </div>
-
+                        <button class="add-to-cart-btn" onclick="addToCart(2)">ADD TO CART</button>
                     </div>
-
                 </article>
 
-                <article class="product-card">
-
+                <article class="product-card" data-product-id="3">
                     <div class="product-image-wrap">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1974&auto=format&fit=crop"
-                            alt="Aurel Case"
-                        >
-
-                        <span class="quick-view">
-                            QUICK VIEW
-                        </span>
-
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1974&auto=format&fit=crop" alt="Aurel Case">
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
-
                     <div class="product-info">
-
                         <div>
-
-                            <span class="product-label">
-                                BESTSELLER
-                            </span>
-
-                            <h2>
-                                AUREL CASE
-                            </h2>
-
-                            <p class="product-desc">
-                                Statement protection piece
-                            </p>
-
-                            <p class="price">
-                                $49.00
-                            </p>
-
+                            <span class="product-label">BESTSELLER</span>
+                            <h2>AUREL CASE</h2>
+                            <p class="product-desc">Statement protection piece</p>
+                            <p class="price">$49.00</p>
                         </div>
-
+                        <button class="add-to-cart-btn" onclick="addToCart(3)">ADD TO CART</button>
                     </div>
-
                 </article>
 
             </section>
-
         </section>
 
     </main>
 
+    <script src="products.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

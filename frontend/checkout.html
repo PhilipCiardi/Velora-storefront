@@ -3,166 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kassa - Velora</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="checkout.css">
-    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
-    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <title>Kassa - VELORA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header (samma som övriga sidor) -->
-    <header class="header">
-        <div class="header-container">
-            <a href="index.html" class="logo">Velora</a>
-            <nav class="nav-menu">
-                <a href="index.html">Hem</a>
-                <a href="index.html#products">Produkter</a>
-                <a href="about.html">Om oss</a>
-                <a href="contact.html">Kontakt</a>
+    <main class="page-shell">
+
+        <section class="hero-section" style="height: auto; padding-bottom: 30px; min-height: unset;">
+            <nav class="top-nav">
+                <a href="index.html" class="logo">Velora</a>
+                <div class="top-links">
+                    <a href="index.html">HOME</a>
+                    <a href="shop.html">SHOP</a>
+                    <a href="trending.html">TRENDING</a>
+                    <a href="contact.html">CONTACT</a>
+                    <a href="checkout.html" class="cart active" aria-label="Cart">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/>
+                            <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
             </nav>
-            <div class="header-actions">
-                <a href="checkout.html" class="cart-icon">
+        </section>
+
+        <section class="checkout-page">
+            <div class="checkout-container">
+
+                <h1 class="checkout-title">KASSA</h1>
+
+                <div class="empty-cart-message" style="display: none;">
                     <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count">0</span>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Checkout innehåll -->
-    <main class="checkout-page">
-        <div class="checkout-container">
-            
-            <h1 class="checkout-title">Kassa</h1>
-
-            <!-- Tom varukorg-meddelande -->
-            <div class="empty-cart-message" style="display: none;">
-                <i class="fas fa-shopping-bag"></i>
-                <h2>Din varukorg är tom</h2>
-                <p>Lägg till några produkter för att fortsätta handla.</p>
-                <a href="index.html#products" class="btn-primary">Se produkter</a>
-            </div>
-
-            <!-- Checkout-innehåll (visas om varukorgen har produkter) -->
-            <div class="checkout-content">
-                
-                <!-- Vänster kolumn: Formulär -->
-                <div class="checkout-form-section">
-                    
-                    <!-- Steg 1: Kontaktuppgifter -->
-                    <section class="checkout-step">
-                        <h2><span class="step-number">1</span> Kontaktuppgifter</h2>
-                        <div class="form-group">
-                            <label for="email">E-post *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telefon</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                    </section>
-
-                    <!-- Steg 2: Leveransadress -->
-                    <section class="checkout-step">
-                        <h2><span class="step-number">2</span> Leveransadress</h2>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">Förnamn *</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Efternamn *</label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Adress *</label>
-                            <input type="text" id="address" name="address" required>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="postalCode">Postnummer *</label>
-                                <input type="text" id="postalCode" name="postalCode" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="city">Ort *</label>
-                                <input type="text" id="city" name="city" required>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Steg 3: Fraktalternativ -->
-                    <section class="checkout-step">
-                        <h2><span class="step-number">3</span> Frakt</h2>
-                        <div class="shipping-options">
-                            <label class="shipping-option">
-                                <input type="radio" name="shipping" value="standard" checked>
-                                <div class="shipping-option-content">
-                                    <span class="shipping-name">Standardfrakt</span>
-                                    <span class="shipping-time">3-5 arbetsdagar</span>
-                                </div>
-                                <span class="shipping-price">49 kr</span>
-                            </label>
-                            <label class="shipping-option">
-                                <input type="radio" name="shipping" value="express">
-                                <div class="shipping-option-content">
-                                    <span class="shipping-name">Expressfrakt</span>
-                                    <span class="shipping-time">1-2 arbetsdagar</span>
-                                </div>
-                                <span class="shipping-price">99 kr</span>
-                            </label>
-                        </div>
-                    </section>
-
-                    <!-- Plats för betalning (Shopify senare) -->
-                    <section class="checkout-step">
-                        <h2><span class="step-number">4</span> Betalning</h2>
-                        <div class="payment-placeholder">
-                            <i class="fas fa-lock"></i>
-                            <p>Betalningsalternativ kopplas via Shopify</p>
-                        </div>
-                    </section>
-
+                    <h2>Din varukorg är tom</h2>
+                    <p>Lägg till några produkter för att fortsätta handla.</p>
+                    <a href="shop.html" class="outline-btn">SE PRODUKTER</a>
                 </div>
 
-                <!-- Höger kolumn: Ordersammanfattning -->
-                <aside class="order-summary">
-                    <h2>Din beställning</h2>
-                    <div class="order-items">
-                        <!-- Fylls i av JavaScript -->
-                    </div>
-                    <div class="order-totals">
-                        <div class="subtotal">
-                            <span>Delsumma</span>
-                            <span class="subtotal-amount">0 kr</span>
-                        </div>
-                        <div class="shipping-cost">
-                            <span>Frakt</span>
-                            <span class="shipping-amount">49 kr</span>
-                        </div>
-                        <div class="total">
-                            <span>Totalt</span>
-                            <span class="total-amount">0 kr</span>
-                        </div>
-                    </div>
-                    <button class="btn-checkout" disabled>
-                        Slutför köp
-                    </button>
-                    <p class="secure-checkout">
-                        <i class="fas fa-lock"></i> Säker betalning
-                    </p>
-                </aside>
+                <div class="checkout-content">
 
+                    <div class="checkout-form-section">
+
+                        <section class="checkout-step">
+                            <h2><span class="step-number">1</span> KONTAKTUPPGIFTER</h2>
+                            <div class="form-group">
+                                <label for="email">E-POST *</label>
+                                <input type="email" id="email" name="email" placeholder="din@email.se" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">TELEFON</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+46 70 000 00 00">
+                            </div>
+                        </section>
+
+                        <section class="checkout-step">
+                            <h2><span class="step-number">2</span> LEVERANSADRESS</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">FÖRNAMN *</label>
+                                    <input type="text" id="firstName" placeholder="Förnamn" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">EFTERNAMN *</label>
+                                    <input type="text" id="lastName" placeholder="Efternamn" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">ADRESS *</label>
+                                <input type="text" id="address" placeholder="Gatuadress" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="postalCode">POSTNUMMER *</label>
+                                    <input type="text" id="postalCode" placeholder="123 45" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">ORT *</label>
+                                    <input type="text" id="city" placeholder="Stad" required>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="checkout-step">
+                            <h2><span class="step-number">3</span> FRAKT</h2>
+                            <div class="shipping-options">
+                                <label class="shipping-option">
+                                    <input type="radio" name="shipping" value="standard" checked>
+                                    <div class="shipping-option-content">
+                                        <span class="shipping-name">Standardfrakt</span>
+                                        <span class="shipping-time">3-5 arbetsdagar</span>
+                                    </div>
+                                    <span class="shipping-price">49 kr</span>
+                                </label>
+                                <label class="shipping-option">
+                                    <input type="radio" name="shipping" value="express">
+                                    <div class="shipping-option-content">
+                                        <span class="shipping-name">Expressfrakt</span>
+                                        <span class="shipping-time">1-2 arbetsdagar</span>
+                                    </div>
+                                    <span class="shipping-price">99 kr</span>
+                                </label>
+                            </div>
+                        </section>
+
+                        <section class="checkout-step">
+                            <h2><span class="step-number">4</span> BETALNING</h2>
+                            <div class="payment-placeholder">
+                                <i class="fas fa-lock"></i>
+                                <p>Betalningsalternativ kopplas via Shopify</p>
+                            </div>
+                        </section>
+
+                    </div>
+
+                    <aside class="order-summary">
+                        <h2>DIN BESTÄLLNING</h2>
+                        <div class="order-items"></div>
+                        <div class="order-totals">
+                            <div class="subtotal">
+                                <span>Delsumma</span>
+                                <span class="subtotal-amount">0 kr</span>
+                            </div>
+                            <div class="shipping-cost">
+                                <span>Frakt</span>
+                                <span class="shipping-amount">49 kr</span>
+                            </div>
+                            <div class="total">
+                                <span>Totalt</span>
+                                <span class="total-amount">0 kr</span>
+                            </div>
+                        </div>
+                        <button class="btn-checkout" disabled>SLUTFÖR KÖP</button>
+                        <p class="secure-checkout"><i class="fas fa-lock"></i> Säker betalning</p>
+                    </aside>
+
+                </div>
             </div>
-        </div>
-    </main>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2025 Velora. Alla rättigheter reserverade.</p>
-        </div>
-    </footer>
+    </main>
 
     <script src="products.js"></script>
     <script src="checkout.js"></script>

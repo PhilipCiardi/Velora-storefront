@@ -3,108 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Shop - VELORA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <title>VELORA | Shop</title>
-
-    <link rel="stylesheet" href="/frontend/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <main class="page-shell">
 
         <section class="hero-section shop-hero">
-
             <nav class="top-nav">
-
-                <a href="/" class="logo">
-                    Velora
-                </a>
-
+                <a href="index.html" class="logo">Velora</a>
                 <div class="top-links">
-
-                    <a href="/">
-                        HOME
-                    </a>
-
-                    <a href="/shop" class="active">
-                        SHOP
-                    </a>
-
-                    <a href="/trending">
-                        TRENDING
-                    </a>
-
-                    <a href="/contact">
-                        CONTACT
-                    </a>
-
-                    <a href="/cart" class="cart" aria-label="Cart">
+                    <a href="index.html">HOME</a>
+                    <a href="shop.html" class="active">SHOP</a>
+                    <a href="trending.html">TRENDING</a>
+                    <a href="contact.html">CONTACT</a>
+                    <a href="checkout.html" class="cart" aria-label="Cart">
                         <svg viewBox="0 0 24 24" fill="none">
                             <path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/>
                             <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/>
                         </svg>
+                        <span class="cart-count">0</span>
                     </a>
-
                 </div>
-
             </nav>
 
             <div class="hero-center">
-
-                <h1>
-                    SHOP THE EDIT.
-                </h1>
-
-                <p>
-                    Explore selected products made for travel, summer moments,
-                    everyday lifestyle and modern convenience.
-                </p>
-
-                <a href="/trending" class="outline-btn">
-                    VIEW TRENDING
-                </a>
-
+                <h1>SHOP ALL</h1>
+                <p>Every piece, curated for the ones who notice the details.</p>
             </div>
-
         </section>
 
         <section class="shop-page-section">
-
             <div class="shop-header">
-
                 <div>
-                    <span class="section-kicker">
-                        VELORA PRODUCTS
-                    </span>
-
-                    <h2>
-                        Curated essentials
-                    </h2>
+                    <span class="section-kicker">COLLECTION</span>
+                    <h2>All Products</h2>
                 </div>
-
-                <p>
-                    A small edit of products selected for clean design,
-                    impulse appeal and everyday usefulness.
-                </p>
-
+                <p>Free shipping on orders over $150. Easy returns within 30 days.</p>
             </div>
 
-            <section class="shop-grid">
+            <div class="shop-grid">
 
-                <article class="product-card">
+                <article class="product-card" data-product-id="1">
                     <div class="product-image-wrap">
-                        <img
-                            src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1974&auto=format&fit=crop"
-                            alt="Luma Mirror"
-                        >
+                        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1974&auto=format&fit=crop" alt="Luma Mirror">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
-
                     <div class="product-info">
                         <div>
                             <span class="product-label">TRENDING</span>
@@ -112,18 +60,15 @@
                             <p class="product-desc">Soft glow vanity mirror</p>
                             <p class="price">$69.00</p>
                         </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(1)">ADD TO CART</button>
                     </div>
                 </article>
 
-                <article class="product-card">
+                <article class="product-card" data-product-id="2">
                     <div class="product-image-wrap">
-                        <img
-                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop"
-                            alt="Solene Tote"
-                        >
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070&auto=format&fit=crop" alt="Solene Tote">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
-
                     <div class="product-info">
                         <div>
                             <span class="product-label">NEW</span>
@@ -131,18 +76,15 @@
                             <p class="product-desc">Minimal everyday carry</p>
                             <p class="price">$89.00</p>
                         </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(2)">ADD TO CART</button>
                     </div>
                 </article>
 
-                <article class="product-card">
+                <article class="product-card" data-product-id="3">
                     <div class="product-image-wrap">
-                        <img
-                            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1974&auto=format&fit=crop"
-                            alt="Aurel Case"
-                        >
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1974&auto=format&fit=crop" alt="Aurel Case">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
-
                     <div class="product-info">
                         <div>
                             <span class="product-label">BESTSELLER</span>
@@ -150,71 +92,64 @@
                             <p class="product-desc">Statement protection piece</p>
                             <p class="price">$49.00</p>
                         </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(3)">ADD TO CART</button>
                     </div>
                 </article>
 
-                <article class="product-card">
+                <article class="product-card" data-product-id="4">
                     <div class="product-image-wrap">
-                        <img
-                            src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1974&auto=format&fit=crop"
-                            alt="Aura Shades"
-                        >
+                        <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=1974&auto=format&fit=crop" alt="Nori Candle">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
-
                     <div class="product-info">
                         <div>
-                            <span class="product-label">SUMMER</span>
-                            <h2>AURA SHADES</h2>
-                            <p class="product-desc">Lightweight summer frames</p>
+                            <span class="product-label">NEW</span>
+                            <h2>NORI CANDLE</h2>
+                            <p class="product-desc">Minimalist scented candle</p>
                             <p class="price">$39.00</p>
                         </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(4)">ADD TO CART</button>
                     </div>
                 </article>
 
-                <article class="product-card">
+                <article class="product-card" data-product-id="5">
                     <div class="product-image-wrap">
-                        <img
-                            src="https://images.unsplash.com/photo-1526045478516-99145907023c?q=80&w=2080&auto=format&fit=crop"
-                            alt="Glow Roller"
-                        >
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999&auto=format&fit=crop" alt="Vale Watch">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
-
                     <div class="product-info">
                         <div>
-                            <span class="product-label">SELFCARE</span>
-                            <h2>GLOW ROLLER</h2>
-                            <p class="product-desc">Cooling morning ritual</p>
-                            <p class="price">$29.00</p>
+                            <span class="product-label">TRENDING</span>
+                            <h2>VALE WATCH</h2>
+                            <p class="product-desc">Clean-dial everyday timepiece</p>
+                            <p class="price">$129.00</p>
                         </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(5)">ADD TO CART</button>
                     </div>
                 </article>
 
-                <article class="product-card">
+                <article class="product-card" data-product-id="6">
                     <div class="product-image-wrap">
-                        <img
-                            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop"
-                            alt="Travel Set"
-                        >
+                        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1980&auto=format&fit=crop" alt="Solen Glasses">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
-
                     <div class="product-info">
                         <div>
-                            <span class="product-label">TRAVEL</span>
-                            <h2>TRAVEL SET</h2>
-                            <p class="product-desc">Compact summer organizer</p>
-                            <p class="price">$45.00</p>
+                            <span class="product-label">BESTSELLER</span>
+                            <h2>SOLEN GLASSES</h2>
+                            <p class="product-desc">Frameless UV400 sunglasses</p>
+                            <p class="price">$59.00</p>
                         </div>
+                        <button class="add-to-cart-btn" onclick="addToCart(6)">ADD TO CART</button>
                     </div>
                 </article>
 
-            </section>
-
+            </div>
         </section>
 
     </main>
 
+    <script src="products.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
