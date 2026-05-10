@@ -95,12 +95,12 @@ function updateTotals() {
     const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
     const shippingOption = document.querySelector('input[name="shipping"]:checked');
-    const shippingCost = shippingOption?.value === 'express' ? 99 : 49;
+    const shippingCost = shippingOption?.value === 'express' ? 9.99 : 4.99;
 
     const total = subtotal + shippingCost;
 
     document.querySelector('.subtotal-amount').textContent = '$' + subtotal.toFixed(2);
-    document.querySelector('.shipping-amount').textContent = shippingCost + ' kr';
+    document.querySelector('.shipping-amount').textContent = '$' + shippingCost.toFixed(2);
     document.querySelector('.total-amount').textContent = '$' + total.toFixed(2);
 }
 
