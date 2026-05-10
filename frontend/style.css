@@ -953,4 +953,46 @@ body {
         font-size: 42px;
     }
 
+}/* FINAL ALIGNMENT FIX */
+
+.side-panel {
+    padding: 34px 36px 34px;
+}
+
+.side-panel::before {
+    inset: 34px 14px 34px 14px;
+}
+
+.side-menu {
+    gap: 22px;
+    margin-top: 38px;
+}
+
+.top-links {
+    gap: 52px;
+}
+
+.cart {
+    margin-left: 4px;
+}/* SIDEBAR FINAL FIX */
+
+.side-panel {
+    padding: 34px 36px 34px;
+    justify-content: flex-start;
+}
+
+.side-panel::before {
+    inset: 34px 14px auto 14px;
+    height: 430px;
+}
+
+.newsletter {
+    margin-top: 70px;
+}
+
+.side-menu {
+    margin-top: 34px;
+    gap: 22px;
+}.search-box {
+    margin-top: 9px;
 }
