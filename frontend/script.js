@@ -40,6 +40,27 @@ function addToCart(productId) {
     showAddedFeedback(productId);
 }
 
+function removeFromCart(productId) {
+    let cart = getCart();
+    cart = cart.filter(item => item.id !== productId);
+    saveCart(cart);
+}
+
+function updateQuantity(productId, change) {
+    const cart = getCart();
+    const item = cart.find(i => i.id === productId);
+    if (!item) return;
+
+    item.quantity += change;
+
+    if (item.quantity <= 0) {
+        removeFromCart(productId);
+        return;
+    }
+
+    saveCart(cart);
+}
+
 function updateCartCount() {
     const cart = getCart();
     const count = cart.reduce((sum, item) => sum + item.quantity, 0);

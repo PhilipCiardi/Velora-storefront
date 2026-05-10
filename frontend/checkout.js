@@ -7,10 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCartCount();
 });
 
-// ===== LADDA VARUKORG =====
+// ===== VARUKORG =====
 
 function getCart() {
     return JSON.parse(localStorage.getItem('veloraCart')) || [];
+}
+
+function saveCart(cart) {
+    localStorage.setItem('veloraCart', JSON.stringify(cart));
+    updateCartCount();
+    loadCart();
 }
 
 function updateCartCount() {
@@ -21,6 +27,30 @@ function updateCartCount() {
         badge.textContent = count;
         badge.style.display = count > 0 ? 'flex' : 'none';
     });
+}
+
+function removeFromCart(productId) {
+    let cart = getCart();
+    cart = cart.filter(item => item.id !== productId);
+    saveCart(cart);
+}
+
+function updateQuantity(productId, change) {
+    const cart = getCart();
+    const item = cart.find(i => i.id === productId);
+    if (!item) return;
+
+    item.quantity += change;
+
+    if (item.quantity <= 0) {
+        let newCart = cart.filter(i => i.id !== productId);
+        localStorage.setItem('veloraCart', JSON.stringify(newCart));
+        updateCartCount();
+        loadCart();
+        return;
+    }
+
+    saveCart(cart);
 }
 
 function loadCart() {
@@ -39,15 +69,18 @@ function loadCart() {
     checkoutContent.style.display = 'grid';
 
     orderItems.innerHTML = cart.map(item => `
-        <div class="order-item">
+        <div class="order-item" data-id="${item.id}">
             <img src="${item.image}" alt="${item.name}" class="order-item-image">
             <div class="order-item-details">
                 <div class="order-item-name">${item.name}</div>
-                <div class="order-item-variant">
-                    ${item.quantity > 1 ? '× ' + item.quantity : '1 st'}
+                <div class="order-item-quantity">
+                    <button class="qty-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
+                    <span>${item.quantity}</span>
+                    <button class="qty-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
                 </div>
                 <div class="order-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
             </div>
+            <button class="remove-item-btn" onclick="removeFromCart(${item.id})">✕</button>
         </div>
     `).join('');
 
