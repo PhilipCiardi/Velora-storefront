@@ -9,75 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .shopify-product-card {
-            background: #fff;
-            border: 1px solid #f0f0f0;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        .shopify-product-card .product-img {
-            width: 100%;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            display: block;
-        }
-        .shopify-product-card .product-info {
-            padding: 1.2rem 1.2rem 0.5rem;
-        }
-        .shopify-product-card .product-label {
-            font-size: 0.65rem;
-            letter-spacing: 0.12em;
-            font-weight: 700;
-            color: #888;
-            text-transform: uppercase;
-        }
-        .shopify-product-card h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 0.3rem 0 0.2rem;
-            letter-spacing: 0.04em;
-        }
-        .shopify-product-card .product-desc {
-            font-size: 0.8rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        /* Hide Shopify's default product title/price since we show our own header */
-        .shopify-buy__product__title,
-        .shopify-buy__product__price {
-            display: none !important;
-        }
-        /* Style the Shopify button to match Velora */
-        .shopify-buy__btn {
-            background: #1a1a1a !important;
-            color: #fff !important;
-            border-radius: 0 !important;
-            font-family: 'Inter', sans-serif !important;
-            font-size: 0.7rem !important;
-            letter-spacing: 0.12em !important;
-            font-weight: 600 !important;
-            padding: 0.9rem 1.5rem !important;
-            width: 100% !important;
-            text-transform: uppercase !important;
-            border: none !important;
-            cursor: pointer !important;
-            transition: background 0.2s !important;
-        }
-        .shopify-buy__btn:hover {
-            background: #333 !important;
-        }
-        .shopify-buy__product {
-            padding: 0 !important;
-        }
-        /* Override Shopify max-width constraint on product */
-        .shopify-buy__product.shopify-buy-frame {
-            max-width: 100% !important;
-            margin: 0 !important;
-        }
-    </style>
 </head>
 <body>
     <main class="page-shell">
@@ -117,70 +48,106 @@
 
             <div class="shop-grid">
 
-                <!-- LED Light Therapy Face Mask -->
-                <article class="shopify-product-card">
-                    <img class="product-img" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop" alt="LED Light Therapy Face Mask">
-                    <div class="product-info">
-                        <span class="product-label">NEW</span>
-                        <h2>LED LIGHT THERAPY FACE MASK</h2>
-                        <p class="product-desc">Professional-grade red light therapy at home — $119</p>
+                <!-- LED Face Mask -->
+                <article class="product-card" data-product-id="5">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop" alt="LED Light Therapy Face Mask">
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
-                    <div id='product-component-1779182442250'></div>
+                    <div class="product-info">
+                        <div>
+                            <span class="product-label">NEW</span>
+                            <h2>LED FACE MASK</h2>
+                            <p class="product-desc">Professional red light therapy at home</p>
+                            <p class="price">$119.00</p>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="shopifyAddToCart('15742625120630')">ADD TO CART</button>
+                    </div>
                 </article>
 
                 <!-- Frost Tumbler -->
-                <article class="shopify-product-card">
-                    <img class="product-img" src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=800&auto=format&fit=crop" alt="Frost Tumbler">
-                    <div class="product-info">
-                        <span class="product-label">BESTSELLER</span>
-                        <h2>FROST TUMBLER</h2>
-                        <p class="product-desc">Insulated tumbler — keeps cold for 24h</p>
+                <article class="product-card" data-product-id="2">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=800&auto=format&fit=crop" alt="Frost Tumbler">
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
-                    <div id='product-component-1779182611005'></div>
+                    <div class="product-info">
+                        <div>
+                            <span class="product-label">BESTSELLER</span>
+                            <h2>FROST TUMBLER</h2>
+                            <p class="product-desc">Insulated tumbler — keeps cold for 24h</p>
+                            <p class="price">$39.00</p>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="shopifyAddToCart('15730092310902')">ADD TO CART</button>
+                    </div>
                 </article>
 
                 <!-- Neck Fan -->
-                <article class="shopify-product-card">
-                    <img class="product-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop" alt="Neck Fan">
-                    <div class="product-info">
-                        <span class="product-label">NEW</span>
-                        <h2>NECK FAN</h2>
-                        <p class="product-desc">Bladeless portable neck fan for summer — $34</p>
+                <article class="product-card" data-product-id="3">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop" alt="Neck Fan">
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
-                    <div id='product-component-1779182628649'></div>
+                    <div class="product-info">
+                        <div>
+                            <span class="product-label">NEW</span>
+                            <h2>NECK FAN</h2>
+                            <p class="product-desc">Bladeless portable neck fan for summer</p>
+                            <p class="price">$34.00</p>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="shopifyAddToCart('15730075500918')">ADD TO CART</button>
+                    </div>
                 </article>
 
-                <!-- Pulse Gun Massage Gun -->
-                <article class="shopify-product-card">
-                    <img class="product-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop" alt="Pulse Gun Massage Gun">
-                    <div class="product-info">
-                        <span class="product-label">TRENDING</span>
-                        <h2>PULSE GUN MASSAGE GUN</h2>
-                        <p class="product-desc">Compact massage gun for recovery — $69</p>
+                <!-- Pulse Gun -->
+                <article class="product-card" data-product-id="4">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop" alt="Pulse Gun Massage Gun">
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
-                    <div id='product-component-1779182646394'></div>
+                    <div class="product-info">
+                        <div>
+                            <span class="product-label">TRENDING</span>
+                            <h2>PULSE GUN</h2>
+                            <p class="product-desc">Compact massage gun for recovery</p>
+                            <p class="price">$69.00</p>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="shopifyAddToCart('15730089591158')">ADD TO CART</button>
+                    </div>
                 </article>
 
                 <!-- Rain Cloud Diffuser -->
-                <article class="shopify-product-card">
-                    <img class="product-img" src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800&auto=format&fit=crop" alt="Rain Cloud Diffuser">
-                    <div class="product-info">
-                        <span class="product-label">TRENDING</span>
-                        <h2>RAIN CLOUD DIFFUSER</h2>
-                        <p class="product-desc">Aroma diffuser with rain effect & 7 LED colors — $49</p>
+                <article class="product-card" data-product-id="1">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800&auto=format&fit=crop" alt="Rain Cloud Diffuser">
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
-                    <div id='product-component-1779182657464'></div>
+                    <div class="product-info">
+                        <div>
+                            <span class="product-label">VIRAL</span>
+                            <h2>RAIN CLOUD DIFFUSER</h2>
+                            <p class="product-desc">Aroma diffuser with rain effect & 7 LED colors</p>
+                            <p class="price">$49.00</p>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="shopifyAddToCart('15729937219958')">ADD TO CART</button>
+                    </div>
                 </article>
 
                 <!-- Sunset Projector Lamp -->
-                <article class="shopify-product-card">
-                    <img class="product-img" src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800&auto=format&fit=crop" alt="Sunset Projector Lamp">
-                    <div class="product-info">
-                        <span class="product-label">BESTSELLER</span>
-                        <h2>SUNSET PROJECTOR LAMP</h2>
-                        <p class="product-desc">Create a golden hour glow in any room — $59</p>
+                <article class="product-card" data-product-id="6">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800&auto=format&fit=crop" alt="Sunset Projector Lamp">
+                        <span class="quick-view">QUICK VIEW</span>
                     </div>
-                    <div id='product-component-1779182668690'></div>
+                    <div class="product-info">
+                        <div>
+                            <span class="product-label">BESTSELLER</span>
+                            <h2>SUNSET PROJECTOR LAMP</h2>
+                            <p class="product-desc">Create a golden hour glow in any room</p>
+                            <p class="price">$59.00</p>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="shopifyAddToCart('15730087100790')">ADD TO CART</button>
+                    </div>
                 </article>
 
             </div>
@@ -188,80 +155,59 @@
 
     </main>
 
-    <!-- Shopify Buy Button SDK (loaded once) -->
+    <!-- Hidden Shopify components -->
+    <div style="display:none">
+        <div id="s-mask"></div>
+        <div id="s-tumbler"></div>
+        <div id="s-neck"></div>
+        <div id="s-pulse"></div>
+        <div id="s-rain"></div>
+        <div id="s-lamp"></div>
+    </div>
+
     <script type="text/javascript">
-    /*<![CDATA[*/
     (function () {
       var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-      if (window.ShopifyBuy && window.ShopifyBuy.UI) {
-        ShopifyBuyInit();
-      } else {
+      if (window.ShopifyBuy && window.ShopifyBuy.UI) { init(); }
+      else {
         var script = document.createElement('script');
         script.async = true;
         script.src = scriptURL;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-        script.onload = ShopifyBuyInit;
+        document.head.appendChild(script);
+        script.onload = init;
       }
-
-      function ShopifyBuyInit() {
+      function init() {
         var client = ShopifyBuy.buildClient({
           domain: 'n83vxb-sr.myshopify.com',
           storefrontAccessToken: 'fe6c0fcaa015bcedba0cd58aad6880c6',
         });
         ShopifyBuy.UI.onReady(client).then(function (ui) {
-
-          // Rain Cloud Diffuser
-          ui.createComponent('product', {
-            id: '15729937219958',
-            node: document.getElementById('product-component-1779182611005'),
-            moneyFormat: '%24%7B%7Bamount%7D%7D',
-            options: { "product": { "styles": { "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } } }, "text": { "button": "Add to cart" } }, "cart": { "text": { "total": "Subtotal", "button": "Checkout" } } }
-          });
-
-          // Frost Tumbler
-          ui.createComponent('product', {
-            id: '15730092310902',
-            node: document.getElementById('product-component-1779182628649'),
-            moneyFormat: '%24%7B%7Bamount%7D%7D',
-            options: { "product": { "styles": { "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } } }, "text": { "button": "Add to cart" } }, "cart": { "text": { "total": "Subtotal", "button": "Checkout" } } }
-          });
-
-          // Neck Fan
-          ui.createComponent('product', {
-            id: '15730075500918',
-            node: document.getElementById('product-component-1779182646394'),
-            moneyFormat: '%24%7B%7Bamount%7D%7D',
-            options: { "product": { "styles": { "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } } }, "text": { "button": "Add to cart" } }, "cart": { "text": { "total": "Subtotal", "button": "Checkout" } } }
-          });
-
-          // Pulse Gun Massage Gun
-          ui.createComponent('product', {
-            id: '15730089591158',
-            node: document.getElementById('product-component-1779182657464'),
-            moneyFormat: '%24%7B%7Bamount%7D%7D',
-            options: { "product": { "styles": { "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } } }, "text": { "button": "Add to cart" } }, "cart": { "text": { "total": "Subtotal", "button": "Checkout" } } }
-          });
-
-          // LED Light Therapy Face Mask
-          ui.createComponent('product', {
-            id: '15742625120630',
-            node: document.getElementById('product-component-1779182442250'),
-            moneyFormat: '%24%7B%7Bamount%7D%7D',
-            options: { "product": { "styles": { "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } } }, "text": { "button": "Add to cart" } }, "cart": { "text": { "total": "Subtotal", "button": "Checkout" } } }
-          });
-
-          // Sunset Projector Lamp
-          ui.createComponent('product', {
-            id: '15730087100790',
-            node: document.getElementById('product-component-1779182668690'),
-            moneyFormat: '%24%7B%7Bamount%7D%7D',
-            options: { "product": { "styles": { "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } } }, "text": { "button": "Add to cart" } }, "cart": { "text": { "total": "Subtotal", "button": "Checkout" } } }
-          });
-
+          var opts = { "product": { "styles": { "product": { "max-width": "100%" } }, "text": { "button": "Add to cart" } }, "cart": { "text": { "total": "Subtotal", "button": "Checkout" } } };
+          ui.createComponent('product', { id: '15742625120630', node: document.getElementById('s-mask'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
+          ui.createComponent('product', { id: '15730092310902', node: document.getElementById('s-tumbler'), moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
+          ui.createComponent('product', { id: '15730075500918', node: document.getElementById('s-neck'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
+          ui.createComponent('product', { id: '15730089591158', node: document.getElementById('s-pulse'),   moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
+          ui.createComponent('product', { id: '15729937219958', node: document.getElementById('s-rain'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
+          ui.createComponent('product', { id: '15730087100790', node: document.getElementById('s-lamp'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
         });
       }
     })();
-    /*]]>*/
+
+    function shopifyAddToCart(productId) {
+      var nodeMap = {
+        '15742625120630': 's-mask',
+        '15730092310902': 's-tumbler',
+        '15730075500918': 's-neck',
+        '15730089591158': 's-pulse',
+        '15729937219958': 's-rain',
+        '15730087100790': 's-lamp'
+      };
+      var node = document.getElementById(nodeMap[productId]);
+      if (node) {
+        var btn = node.querySelector('.shopify-buy__btn');
+        if (btn) btn.click();
+      }
+    }
     </script>
 
     <script src="products.js"></script>
