@@ -9,6 +9,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .shopify-buy__btn {
+            background: transparent !important;
+            border: 1px solid rgba(255,255,255,0.35) !important;
+            color: rgba(255,255,255,0.85) !important;
+            border-radius: 0 !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 10px !important;
+            letter-spacing: 3px !important;
+            font-weight: 600 !important;
+            padding: 10px 18px !important;
+            text-transform: uppercase !important;
+            cursor: pointer !important;
+            transition: all 0.25s !important;
+        }
+        .shopify-buy__btn:hover {
+            background: white !important;
+            color: black !important;
+            border-color: white !important;
+        }
+        .shopify-buy__product__title,
+        .shopify-buy__product__price { display: none !important; }
+        .shopify-buy__product { padding: 0 !important; }
+    </style>
 </head>
 <body>
     <main class="page-shell">
@@ -72,54 +96,54 @@
 
             <section class="product-showcase">
 
-                <!-- Rain Cloud Diffuser -->
-                <article class="product-card" data-product-id="1">
+                <!-- LED Face Mask -->
+                <article class="product-card" data-product-id="5">
                     <div class="product-image-wrap">
-                        <img src="images/rain-cloud-diffuser.jpg" alt="Rain Cloud Diffuser">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop" alt="LED Light Therapy Face Mask">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
                     <div class="product-info">
                         <div>
-                            <span class="product-label">TRENDING</span>
-                            <h2>RAIN CLOUD DIFFUSER</h2>
-                            <p class="product-desc">Aroma diffuser med regneffekt & 7 LED-färger</p>
-                            <p class="price">499 kr</p>
+                            <span class="product-label">NEW</span>
+                            <h2>LED FACE MASK</h2>
+                            <p class="product-desc">Professional red light therapy at home</p>
+                            <p class="price">$119.00</p>
                         </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(1)">ADD TO CART</button>
-                    </div>
-                </article>
-
-                <!-- Sunset Projector Lamp -->
-                <article class="product-card" data-product-id="3">
-                    <div class="product-image-wrap">
-                        <img src="images/sunset-projector.jpg" alt="Sunset Projector Lamp">
-                        <span class="quick-view">QUICK VIEW</span>
-                    </div>
-                    <div class="product-info">
-                        <div>
-                            <span class="product-label">VIRAL</span>
-                            <h2>SUNSET PROJECTOR LAMP</h2>
-                            <p class="product-desc">Skapa magiska solnedgångar i ditt rum</p>
-                            <p class="price">599 kr</p>
-                        </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(3)">ADD TO CART</button>
+                        <div id='product-component-home-mask'></div>
                     </div>
                 </article>
 
                 <!-- Pulse Gun -->
                 <article class="product-card" data-product-id="4">
                     <div class="product-image-wrap">
-                        <img src="images/pulse-gun.jpg" alt="Pulse Gun Massage Gun">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1974&auto=format&fit=crop" alt="Pulse Gun Massage Gun">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
                     <div class="product-info">
                         <div>
                             <span class="product-label">TRENDING</span>
                             <h2>PULSE GUN</h2>
-                            <p class="product-desc">Kompakt massagegun för återhämtning</p>
-                            <p class="price">699 kr</p>
+                            <p class="product-desc">Compact massage gun for recovery</p>
+                            <p class="price">$69.00</p>
                         </div>
-                        <button class="add-to-cart-btn" onclick="addToCart(4)">ADD TO CART</button>
+                        <div id='product-component-home-pulse'></div>
+                    </div>
+                </article>
+
+                <!-- Rain Cloud Diffuser -->
+                <article class="product-card" data-product-id="1">
+                    <div class="product-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1974&auto=format&fit=crop" alt="Rain Cloud Diffuser">
+                        <span class="quick-view">QUICK VIEW</span>
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <span class="product-label">VIRAL</span>
+                            <h2>RAIN CLOUD DIFFUSER</h2>
+                            <p class="product-desc">Aroma diffuser with rain effect & 7 LED colors</p>
+                            <p class="price">$49.00</p>
+                        </div>
+                        <div id='product-component-home-rain'></div>
                     </div>
                 </article>
 
@@ -127,6 +151,40 @@
         </section>
 
     </main>
+
+    <script type="text/javascript">
+    (function () {
+      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+      if (window.ShopifyBuy && window.ShopifyBuy.UI) { ShopifyBuyInit(); }
+      else {
+        var script = document.createElement('script');
+        script.async = true; script.src = scriptURL;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: 'n83vxb-sr.myshopify.com',
+          storefrontAccessToken: 'fe6c0fcaa015bcedba0cd58aad6880c6',
+        });
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          var opts = function(id, node) {
+            return {
+              id: id, node: node,
+              moneyFormat: '%24%7B%7Bamount%7D%7D',
+              options: {
+                "product": { "styles": { "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } } }, "text": { "button": "Add to cart" } },
+                "cart": { "text": { "total": "Subtotal", "button": "Checkout" } }
+              }
+            };
+          };
+          ui.createComponent('product', opts('15742625120630', document.getElementById('product-component-home-mask')));
+          ui.createComponent('product', opts('15730089591158', document.getElementById('product-component-home-pulse')));
+          ui.createComponent('product', opts('15729937219958', document.getElementById('product-component-home-rain')));
+        });
+      }
+    })();
+    </script>
 
     <script src="products.js"></script>
     <script src="script.js"></script>
