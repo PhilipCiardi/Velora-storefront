@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .qv-thumbs { display:flex; gap:8px; margin-top:12px; }
+        .qv-thumbs img { width:56px; height:56px; object-fit:cover; cursor:pointer; border:2px solid transparent; transition:0.2s; }
+        .qv-thumbs img.active, .qv-thumbs img:hover { border-color:white; }
+    </style>
 </head>
 <body>
     <main class="page-shell">
@@ -30,7 +35,6 @@
                     </a>
                 </div>
             </nav>
-
             <div class="hero-center">
                 <h1>TRENDING NOW</h1>
                 <p>The products everyone is talking about right now.</p>
@@ -45,58 +49,53 @@
 
             <div class="trending-grid">
 
-                <!-- LED Face Mask — LARGE -->
-                <article class="featured-product large" data-product-id="5">
-                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974&auto=format&fit=crop" alt="LED Light Therapy Face Mask">
+                <article class="featured-product large" onclick="openQuickView('mask')">
+                    <img src="images/First_pick.jpg" alt="LED Light Therapy Face Mask">
                     <div class="featured-overlay">
                         <span>NEW</span>
                         <h3>LED LIGHT THERAPY FACE MASK</h3>
-                        <p>Professional-grade red & infrared light therapy at home. Fight acne, reduce fine lines, boost collagen — in just 10 minutes a day.</p>
-                        <button class="add-to-cart-btn" onclick="shopifyAddToCart('15742625120630')" style="margin-top: 16px;">ADD TO CART — $119</button>
+                        <p>Professional-grade red & infrared light therapy at home. Fight acne, reduce fine lines, boost collagen.</p>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); shopifyAddToCart('15742625120630')" style="margin-top:16px;">ADD TO CART — $119</button>
                     </div>
                 </article>
 
-                <!-- Pulse Gun — LARGE -->
-                <article class="featured-product large" data-product-id="4">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1974&auto=format&fit=crop" alt="Pulse Gun Massage Gun">
+                <article class="featured-product large" onclick="openQuickView('pulse')">
+                    <img src="images/first_pick.jpg" alt="Pulse Gun Massage Gun">
                     <div class="featured-overlay">
                         <span>TRENDING</span>
                         <h3>PULSE GUN MASSAGE GUN</h3>
                         <p>Compact, powerful recovery tool. Used by athletes and wellness enthusiasts worldwide.</p>
-                        <button class="add-to-cart-btn" onclick="shopifyAddToCart('15730089591158')" style="margin-top: 16px;">ADD TO CART — $69</button>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); shopifyAddToCart('15730089591158')" style="margin-top:16px;">ADD TO CART — $69</button>
                     </div>
                 </article>
 
-                <!-- Rain Cloud Diffuser -->
-                <article class="featured-product" data-product-id="1">
-                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1974&auto=format&fit=crop" alt="Rain Cloud Diffuser">
+                <article class="featured-product" onclick="openQuickView('rain')">
+                    <img src="images/Yoga_girl.jpg" alt="Rain Cloud Diffuser">
                     <div class="featured-overlay">
                         <span>VIRAL</span>
                         <h3>RAIN CLOUD DIFFUSER</h3>
                         <p>The aroma diffuser taking TikTok by storm.</p>
-                        <button class="add-to-cart-btn" onclick="shopifyAddToCart('15729937219958')" style="margin-top: 16px;">ADD TO CART — $49</button>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); shopifyAddToCart('15729937219958')" style="margin-top:16px;">ADD TO CART — $49</button>
                     </div>
                 </article>
 
-                <!-- Sunset Projector Lamp -->
-                <article class="featured-product" data-product-id="6">
-                    <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=1974&auto=format&fit=crop" alt="Sunset Projector Lamp">
+                <article class="featured-product" onclick="openQuickView('lamp')">
+                    <img src="images/Orange.jpg" alt="Sunset Projector Lamp">
                     <div class="featured-overlay">
                         <span>BESTSELLER</span>
                         <h3>SUNSET PROJECTOR LAMP</h3>
                         <p>Create a golden hour glow in any room.</p>
-                        <button class="add-to-cart-btn" onclick="shopifyAddToCart('15730087100790')" style="margin-top: 16px;">ADD TO CART — $59</button>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); shopifyAddToCart('15730087100790')" style="margin-top:16px;">ADD TO CART — $59</button>
                     </div>
                 </article>
 
-                <!-- Neck Fan -->
-                <article class="featured-product" data-product-id="3">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1974&auto=format&fit=crop" alt="Neck Fan">
+                <article class="featured-product" onclick="openQuickView('neck')">
+                    <img src="images/Pink_with_wind.jpg" alt="Neck Fan">
                     <div class="featured-overlay">
                         <span>NEW</span>
                         <h3>NECK FAN</h3>
                         <p>Bladeless & portable. Stay cool anywhere this summer.</p>
-                        <button class="add-to-cart-btn" onclick="shopifyAddToCart('15730075500918')" style="margin-top: 16px;">ADD TO CART — $34</button>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); shopifyAddToCart('15730075500918')" style="margin-top:16px;">ADD TO CART — $34</button>
                     </div>
                 </article>
 
@@ -105,56 +104,81 @@
 
     </main>
 
-    <!-- Hidden Shopify components -->
-    <div style="display:none">
-        <div id="t-mask"></div>
-        <div id="t-pulse"></div>
-        <div id="t-rain"></div>
-        <div id="t-lamp"></div>
-        <div id="t-neck"></div>
+    <!-- Quick View Modal -->
+    <div id="quickViewModal">
+        <div class="qv-overlay" onclick="closeQuickView()"></div>
+        <div class="qv-content">
+            <button class="qv-close" onclick="closeQuickView()">✕</button>
+            <div class="qv-image-wrap">
+                <img id="qv-main-img" src="" alt="">
+            </div>
+            <div class="qv-details">
+                <h2 id="qv-title"></h2>
+                <p class="product-desc" id="qv-desc"></p>
+                <p class="price" id="qv-price"></p>
+                <div class="qv-thumbs" id="qv-thumbs"></div>
+                <button class="add-to-cart-btn qv-add-btn" id="qv-cart-btn">ADD TO CART</button>
+                <p class="qv-secure"><i class="fas fa-lock"></i> Secure checkout via Shopify</p>
+            </div>
+        </div>
     </div>
 
-    <script type="text/javascript">
-    (function () {
-      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-      if (window.ShopifyBuy && window.ShopifyBuy.UI) { init(); }
-      else {
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = scriptURL;
-        document.head.appendChild(script);
-        script.onload = init;
-      }
-      function init() {
-        var client = ShopifyBuy.buildClient({
-          domain: 'n83vxb-sr.myshopify.com',
-          storefrontAccessToken: 'fe6c0fcaa015bcedba0cd58aad6880c6',
+    <div style="display:none">
+        <div id="t-mask"></div><div id="t-pulse"></div><div id="t-rain"></div>
+        <div id="t-lamp"></div><div id="t-neck"></div>
+    </div>
+
+    <script>
+    var products = {
+        mask:   { title:'LED LIGHT THERAPY FACE MASK', desc:'Professional-grade red & infrared light therapy at home. Fight acne, reduce fine lines, and boost collagen in just 10 minutes a day.', price:'$119.00', shopifyId:'15742625120630', shopifyNode:'t-mask', images:['images/First_pick.jpg','images/last_pick.jpg','images/Sleep.jpg','images/details.jpg'] },
+        pulse:  { title:'PULSE GUN MASSAGE GUN', desc:'Compact, powerful percussion massage gun. 30 speed settings, multiple attachments. Perfect for post-workout recovery.', price:'$69.00', shopifyId:'15730089591158', shopifyNode:'t-pulse', images:['images/first_pick.jpg','images/Back.jpg','images/Front.jpg','images/Green.jpg'] },
+        rain:   { title:'RAIN CLOUD DIFFUSER', desc:'Simulates falling raindrops while diffusing aromatherapy oils. 7 LED colors, quiet operation, 2/4/8h timer.', price:'$49.00', shopifyId:'15729937219958', shopifyNode:'t-rain', images:['images/Yoga_girl.jpg','images/Bedroom.jpg','images/White_background.jpg'] },
+        lamp:   { title:'SUNSET PROJECTOR LAMP', desc:'Create a stunning golden hour glow on any wall. RGB color modes, remote & app control.', price:'$59.00', shopifyId:'15730087100790', shopifyNode:'t-lamp', images:['images/Orange.jpg','images/Purple.jpg','images/Yellow.jpg','images/last_pick.jpg'] },
+        neck:   { title:'NECK FAN', desc:'Bladeless hands-free neck fan. Ultra-quiet, 3 speed settings. USB rechargeable, perfect for summer.', price:'$34.00', shopifyId:'15730075500918', shopifyNode:'t-neck', images:['images/Pink_with_wind.jpg','images/Green.jpg','images/Pink.jpg','images/White_background.jpg'] }
+    };
+
+    function openQuickView(id) {
+        var p = products[id];
+        document.getElementById('qv-title').textContent = p.title;
+        document.getElementById('qv-desc').textContent = p.desc;
+        document.getElementById('qv-price').textContent = p.price;
+        document.getElementById('qv-main-img').src = p.images[0];
+        document.getElementById('qv-cart-btn').onclick = function(){ shopifyAddToCart(p.shopifyId); };
+        var thumbsEl = document.getElementById('qv-thumbs');
+        thumbsEl.innerHTML = '';
+        p.images.forEach(function(src, i) {
+            var img = document.createElement('img'); img.src = src;
+            if (i===0) img.classList.add('active');
+            img.onclick = function() { document.getElementById('qv-main-img').src = src; thumbsEl.querySelectorAll('img').forEach(function(t){t.classList.remove('active');}); img.classList.add('active'); };
+            thumbsEl.appendChild(img);
         });
-        ShopifyBuy.UI.onReady(client).then(function (ui) {
-          var opts = { "product": { "styles": { "product": { "max-width": "100%" } }, "text": { "button": "Add to cart" } }, "cart": { "text": { "total": "Subtotal", "button": "Checkout" } } };
-          ui.createComponent('product', { id: '15742625120630', node: document.getElementById('t-mask'),  moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-          ui.createComponent('product', { id: '15730089591158', node: document.getElementById('t-pulse'), moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-          ui.createComponent('product', { id: '15729937219958', node: document.getElementById('t-rain'),  moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-          ui.createComponent('product', { id: '15730087100790', node: document.getElementById('t-lamp'),  moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-          ui.createComponent('product', { id: '15730075500918', node: document.getElementById('t-neck'),  moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-        });
-      }
-    })();
+        document.getElementById('quickViewModal').classList.add('active');
+    }
+
+    function closeQuickView() { document.getElementById('quickViewModal').classList.remove('active'); }
 
     function shopifyAddToCart(productId) {
-      var nodeMap = {
-        '15742625120630': 't-mask',
-        '15730089591158': 't-pulse',
-        '15729937219958': 't-rain',
-        '15730087100790': 't-lamp',
-        '15730075500918': 't-neck'
-      };
-      var node = document.getElementById(nodeMap[productId]);
-      if (node) {
-        var btn = node.querySelector('.shopify-buy__btn');
-        if (btn) btn.click();
-      }
+        var nodeMap = { '15742625120630':'t-mask','15730089591158':'t-pulse','15729937219958':'t-rain','15730087100790':'t-lamp','15730075500918':'t-neck' };
+        var node = document.getElementById(nodeMap[productId]);
+        if (node) { var btn = node.querySelector('.shopify-buy__btn'); if (btn) btn.click(); }
     }
+
+    (function () {
+        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+        if (window.ShopifyBuy && window.ShopifyBuy.UI) { init(); }
+        else { var script = document.createElement('script'); script.async = true; script.src = scriptURL; document.head.appendChild(script); script.onload = init; }
+        function init() {
+            var client = ShopifyBuy.buildClient({ domain:'n83vxb-sr.myshopify.com', storefrontAccessToken:'fe6c0fcaa015bcedba0cd58aad6880c6' });
+            ShopifyBuy.UI.onReady(client).then(function(ui) {
+                var opts = { "product":{"styles":{"product":{"max-width":"100%"}},"text":{"button":"Add to cart"}},"cart":{"text":{"total":"Subtotal","button":"Checkout"}} };
+                ui.createComponent('product',{id:'15742625120630',node:document.getElementById('t-mask'),  moneyFormat:'%24%7B%7Bamount%7D%7D',options:opts});
+                ui.createComponent('product',{id:'15730089591158',node:document.getElementById('t-pulse'), moneyFormat:'%24%7B%7Bamount%7D%7D',options:opts});
+                ui.createComponent('product',{id:'15729937219958',node:document.getElementById('t-rain'),  moneyFormat:'%24%7B%7Bamount%7D%7D',options:opts});
+                ui.createComponent('product',{id:'15730087100790',node:document.getElementById('t-lamp'),  moneyFormat:'%24%7B%7Bamount%7D%7D',options:opts});
+                ui.createComponent('product',{id:'15730075500918',node:document.getElementById('t-neck'),  moneyFormat:'%24%7B%7Bamount%7D%7D',options:opts});
+            });
+        }
+    })();
     </script>
 
     <script src="products.js"></script>

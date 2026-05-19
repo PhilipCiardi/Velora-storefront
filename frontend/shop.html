@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .qv-thumbs { display:flex; gap:8px; margin-top:12px; }
+        .qv-thumbs img { width:56px; height:56px; object-fit:cover; cursor:pointer; border:2px solid transparent; transition:0.2s; }
+        .qv-thumbs img.active, .qv-thumbs img:hover { border-color:white; }
+    </style>
 </head>
 <body>
     <main class="page-shell">
@@ -30,7 +35,6 @@
                     </a>
                 </div>
             </nav>
-
             <div class="hero-center">
                 <h1>SHOP ALL</h1>
                 <p>Every piece, curated for the ones who notice the details.</p>
@@ -48,10 +52,9 @@
 
             <div class="shop-grid">
 
-                <!-- LED Face Mask -->
-                <article class="product-card" data-product-id="5">
-                    <div class="product-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop" alt="LED Light Therapy Face Mask">
+                <article class="product-card" data-product-id="mask">
+                    <div class="product-image-wrap" onclick="openQuickView('mask')">
+                        <img src="images/First_pick.jpg" alt="LED Light Therapy Face Mask">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
                     <div class="product-info">
@@ -65,27 +68,25 @@
                     </div>
                 </article>
 
-                <!-- Frost Tumbler -->
-                <article class="product-card" data-product-id="2">
-                    <div class="product-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=800&auto=format&fit=crop" alt="Frost Tumbler">
+                <article class="product-card" data-product-id="tumbler">
+                    <div class="product-image-wrap" onclick="openQuickView('tumbler')">
+                        <img src="images/Blue.jpg" alt="Frost Tumbler">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
                     <div class="product-info">
                         <div>
                             <span class="product-label">BESTSELLER</span>
                             <h2>FROST TUMBLER</h2>
-                            <p class="product-desc">Insulated tumbler — keeps cold for 24h</p>
+                            <p class="product-desc">Insulated 40oz tumbler — keeps cold for 24h</p>
                             <p class="price">$39.00</p>
                         </div>
                         <button class="add-to-cart-btn" onclick="shopifyAddToCart('15730092310902')">ADD TO CART</button>
                     </div>
                 </article>
 
-                <!-- Neck Fan -->
-                <article class="product-card" data-product-id="3">
-                    <div class="product-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop" alt="Neck Fan">
+                <article class="product-card" data-product-id="neck">
+                    <div class="product-image-wrap" onclick="openQuickView('neck')">
+                        <img src="images/White_background.jpg" alt="Neck Fan">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
                     <div class="product-info">
@@ -99,10 +100,9 @@
                     </div>
                 </article>
 
-                <!-- Pulse Gun -->
-                <article class="product-card" data-product-id="4">
-                    <div class="product-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop" alt="Pulse Gun Massage Gun">
+                <article class="product-card" data-product-id="pulse">
+                    <div class="product-image-wrap" onclick="openQuickView('pulse')">
+                        <img src="images/first_pick.jpg" alt="Pulse Gun Massage Gun">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
                     <div class="product-info">
@@ -116,10 +116,9 @@
                     </div>
                 </article>
 
-                <!-- Rain Cloud Diffuser -->
-                <article class="product-card" data-product-id="1">
-                    <div class="product-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800&auto=format&fit=crop" alt="Rain Cloud Diffuser">
+                <article class="product-card" data-product-id="rain">
+                    <div class="product-image-wrap" onclick="openQuickView('rain')">
+                        <img src="images/Yoga_girl.jpg" alt="Rain Cloud Diffuser">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
                     <div class="product-info">
@@ -133,10 +132,9 @@
                     </div>
                 </article>
 
-                <!-- Sunset Projector Lamp -->
-                <article class="product-card" data-product-id="6">
-                    <div class="product-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?q=80&w=800&auto=format&fit=crop" alt="Sunset Projector Lamp">
+                <article class="product-card" data-product-id="lamp">
+                    <div class="product-image-wrap" onclick="openQuickView('lamp')">
+                        <img src="images/Orange.jpg" alt="Sunset Projector Lamp">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
                     <div class="product-info">
@@ -155,6 +153,25 @@
 
     </main>
 
+    <!-- Quick View Modal -->
+    <div id="quickViewModal">
+        <div class="qv-overlay" onclick="closeQuickView()"></div>
+        <div class="qv-content">
+            <button class="qv-close" onclick="closeQuickView()">✕</button>
+            <div class="qv-image-wrap">
+                <img id="qv-main-img" src="" alt="">
+            </div>
+            <div class="qv-details">
+                <h2 id="qv-title"></h2>
+                <p class="product-desc" id="qv-desc"></p>
+                <p class="price" id="qv-price"></p>
+                <div class="qv-thumbs" id="qv-thumbs"></div>
+                <button class="add-to-cart-btn qv-add-btn" id="qv-cart-btn">ADD TO CART</button>
+                <p class="qv-secure"><i class="fas fa-lock"></i> Secure checkout via Shopify</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Hidden Shopify components -->
     <div style="display:none">
         <div id="s-mask"></div>
@@ -165,49 +182,100 @@
         <div id="s-lamp"></div>
     </div>
 
-    <script type="text/javascript">
-    (function () {
-      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-      if (window.ShopifyBuy && window.ShopifyBuy.UI) { init(); }
-      else {
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = scriptURL;
-        document.head.appendChild(script);
-        script.onload = init;
-      }
-      function init() {
-        var client = ShopifyBuy.buildClient({
-          domain: 'n83vxb-sr.myshopify.com',
-          storefrontAccessToken: 'fe6c0fcaa015bcedba0cd58aad6880c6',
+    <script>
+    var products = {
+        mask: {
+            title: 'LED LIGHT THERAPY FACE MASK',
+            desc: 'Professional-grade red & infrared light therapy at home. Fight acne, reduce fine lines, and boost collagen in just 10 minutes a day. 3000mAh cordless battery with auto-off timer.',
+            price: '$119.00', shopifyId: '15742625120630', shopifyNode: 's-mask',
+            images: ['images/First_pick.jpg','images/last_pick.jpg','images/Sleep.jpg','images/details.jpg']
+        },
+        tumbler: {
+            title: 'FROST TUMBLER',
+            desc: '40oz insulated stainless steel tumbler. Keeps drinks cold for 24h, hot for 12h. Available in multiple colors. The Stanley-style tumbler at a fraction of the price.',
+            price: '$39.00', shopifyId: '15730092310902', shopifyNode: 's-tumbler',
+            images: ['images/Blue.jpg','images/pink.jpg','images/red.jpg','images/four_black.jpg']
+        },
+        neck: {
+            title: 'NECK FAN',
+            desc: 'Bladeless hands-free neck fan. Ultra-quiet with 3 speed settings. USB rechargeable, lightweight, perfect for summer outdoors, commuting, or working out.',
+            price: '$34.00', shopifyId: '15730075500918', shopifyNode: 's-neck',
+            images: ['images/White_background.jpg','images/Green.jpg','images/Pink.jpg','images/Pink_with_wind.jpg']
+        },
+        pulse: {
+            title: 'PULSE GUN MASSAGE GUN',
+            desc: 'Compact, powerful percussion massage gun. 30 speed settings, multiple attachments. Perfect for post-workout recovery and muscle relief.',
+            price: '$69.00', shopifyId: '15730089591158', shopifyNode: 's-pulse',
+            images: ['images/first_pick.jpg','images/Back.jpg','images/Front.jpg','images/Green.jpg']
+        },
+        rain: {
+            title: 'RAIN CLOUD DIFFUSER',
+            desc: 'Simulates falling raindrops while diffusing your favourite aromatherapy oils. 7 LED colors, quiet operation, 2/4/8h timer. The viral home wellness gadget everyone is talking about.',
+            price: '$49.00', shopifyId: '15729937219958', shopifyNode: 's-rain',
+            images: ['images/Yoga_girl.jpg','images/Bedroom.jpg','images/White_background.jpg']
+        },
+        lamp: {
+            title: 'SUNSET PROJECTOR LAMP',
+            desc: 'Create a stunning golden hour glow on any wall. RGB color modes, remote control & app control. The ultimate room aesthetic upgrade seen all over TikTok and Instagram.',
+            price: '$59.00', shopifyId: '15730087100790', shopifyNode: 's-lamp',
+            images: ['images/Orange.jpg','images/Purple.jpg','images/Yellow.jpg','images/last_pick.jpg']
+        }
+    };
+
+    function openQuickView(id) {
+        var p = products[id];
+        document.getElementById('qv-title').textContent = p.title;
+        document.getElementById('qv-desc').textContent = p.desc;
+        document.getElementById('qv-price').textContent = p.price;
+        document.getElementById('qv-main-img').src = p.images[0];
+        document.getElementById('qv-cart-btn').onclick = function(){ shopifyAddToCart(p.shopifyId); };
+        var thumbsEl = document.getElementById('qv-thumbs');
+        thumbsEl.innerHTML = '';
+        p.images.forEach(function(src, i) {
+            var img = document.createElement('img');
+            img.src = src;
+            if (i === 0) img.classList.add('active');
+            img.onclick = function() {
+                document.getElementById('qv-main-img').src = src;
+                thumbsEl.querySelectorAll('img').forEach(function(t){ t.classList.remove('active'); });
+                img.classList.add('active');
+            };
+            thumbsEl.appendChild(img);
         });
-        ShopifyBuy.UI.onReady(client).then(function (ui) {
-          var opts = { "product": { "styles": { "product": { "max-width": "100%" } }, "text": { "button": "Add to cart" } }, "cart": { "text": { "total": "Subtotal", "button": "Checkout" } } };
-          ui.createComponent('product', { id: '15742625120630', node: document.getElementById('s-mask'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-          ui.createComponent('product', { id: '15730092310902', node: document.getElementById('s-tumbler'), moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-          ui.createComponent('product', { id: '15730075500918', node: document.getElementById('s-neck'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-          ui.createComponent('product', { id: '15730089591158', node: document.getElementById('s-pulse'),   moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-          ui.createComponent('product', { id: '15729937219958', node: document.getElementById('s-rain'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-          ui.createComponent('product', { id: '15730087100790', node: document.getElementById('s-lamp'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
-        });
-      }
-    })();
+        document.getElementById('quickViewModal').classList.add('active');
+    }
+
+    function closeQuickView() {
+        document.getElementById('quickViewModal').classList.remove('active');
+    }
 
     function shopifyAddToCart(productId) {
-      var nodeMap = {
-        '15742625120630': 's-mask',
-        '15730092310902': 's-tumbler',
-        '15730075500918': 's-neck',
-        '15730089591158': 's-pulse',
-        '15729937219958': 's-rain',
-        '15730087100790': 's-lamp'
-      };
-      var node = document.getElementById(nodeMap[productId]);
-      if (node) {
-        var btn = node.querySelector('.shopify-buy__btn');
-        if (btn) btn.click();
-      }
+        var nodeMap = {
+            '15742625120630': 's-mask', '15730092310902': 's-tumbler',
+            '15730075500918': 's-neck', '15730089591158': 's-pulse',
+            '15729937219958': 's-rain', '15730087100790': 's-lamp'
+        };
+        var node = document.getElementById(nodeMap[productId]);
+        if (node) { var btn = node.querySelector('.shopify-buy__btn'); if (btn) btn.click(); }
     }
+
+    (function () {
+        var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+        if (window.ShopifyBuy && window.ShopifyBuy.UI) { init(); }
+        else { var script = document.createElement('script'); script.async = true; script.src = scriptURL; document.head.appendChild(script); script.onload = init; }
+        function init() {
+            var client = ShopifyBuy.buildClient({ domain: 'n83vxb-sr.myshopify.com', storefrontAccessToken: 'fe6c0fcaa015bcedba0cd58aad6880c6' });
+            ShopifyBuy.UI.onReady(client).then(function (ui) {
+                var opts = { "product": { "styles": { "product": { "max-width": "100%" } }, "text": { "button": "Add to cart" } }, "cart": { "text": { "total": "Subtotal", "button": "Checkout" } } };
+                ui.createComponent('product', { id: '15742625120630', node: document.getElementById('s-mask'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
+                ui.createComponent('product', { id: '15730092310902', node: document.getElementById('s-tumbler'), moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
+                ui.createComponent('product', { id: '15730075500918', node: document.getElementById('s-neck'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
+                ui.createComponent('product', { id: '15730089591158', node: document.getElementById('s-pulse'),   moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
+                ui.createComponent('product', { id: '15729937219958', node: document.getElementById('s-rain'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
+                ui.createComponent('product', { id: '15730087100790', node: document.getElementById('s-lamp'),    moneyFormat: '%24%7B%7Bamount%7D%7D', options: opts });
+            });
+        }
+    })();
     </script>
 
     <script src="products.js"></script>
