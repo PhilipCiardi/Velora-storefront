@@ -50,7 +50,7 @@
                     <div class="featured-overlay">
                         <h3>PULSE GUN MASSAGE GUN</h3>
                         <p>Compact, powerful recovery tool used by athletes worldwide.</p>
-                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(4)" style="margin-top:16px;">ADD TO CART — $69</button>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(4)" style="margin-top:16px;">VÄLJ FÄRG — $69</button>
                     </div>
                 </article>
 
@@ -59,7 +59,7 @@
                     <div class="featured-overlay">
                         <h3>RAIN CLOUD DIFFUSER</h3>
                         <p>The aroma diffuser taking TikTok by storm.</p>
-                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(5)" style="margin-top:16px;">ADD TO CART — $49</button>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(5)" style="margin-top:16px;">VÄLJ FÄRG — $49</button>
                     </div>
                 </article>
 
@@ -77,7 +77,7 @@
                     <div class="featured-overlay">
                         <h3>NECK FAN</h3>
                         <p>Bladeless & portable. Stay cool anywhere this summer.</p>
-                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(3)" style="margin-top:16px;">ADD TO CART — $34</button>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(3)" style="margin-top:16px;">VÄLJ FÄRG — $34</button>
                     </div>
                 </article>
 
@@ -90,15 +90,14 @@
         <div class="qv-content">
             <button class="qv-close" onclick="closeQuickView()">✕</button>
             <div>
-                <div class="qv-image-wrap">
-                    <img id="qv-main-img" src="" alt="">
-                </div>
+                <div class="qv-image-wrap"><img id="qv-main-img" src="" alt=""></div>
                 <div id="qv-thumbs" style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;padding:8px;"></div>
             </div>
             <div class="qv-details">
                 <h2 id="qv-title"></h2>
                 <p class="product-desc" id="qv-desc"></p>
                 <p class="price" id="qv-price"></p>
+                <div id="qv-variants" style="margin:12px 0;"></div>
                 <button class="add-to-cart-btn" id="qv-cart-btn">ADD TO CART</button>
                 <p class="qv-secure"><i class="fas fa-lock"></i> Secure checkout via Shopify</p>
             </div>
