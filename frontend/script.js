@@ -48,7 +48,8 @@ function openQuickView(productId) {
     if (!product) return;
     var images = product.images || [product.image];
 
-    document.getElementById('qv-label').textContent = product.label;
+    var labelEl = document.getElementById('qv-label');
+    if (labelEl) labelEl.textContent = product.label;
     document.getElementById('qv-title').textContent = product.name;
     document.getElementById('qv-desc').textContent = product.description;
     document.getElementById('qv-price').textContent = '$' + product.price + '.00';
