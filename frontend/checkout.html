@@ -12,7 +12,8 @@
 </head>
 <body>
     <main class="page-shell">
-        <section class="hero-section" style="height:auto;padding-bottom:30px;min-height:unset;">
+
+        <section class="hero-section" style="height:auto; padding-bottom:30px; min-height:unset;">
             <nav class="top-nav">
                 <a href="index.html" class="logo">Velora</a>
                 <div class="top-links">
@@ -21,7 +22,10 @@
                     <a href="trending.html">TRENDING</a>
                     <a href="contact.html">CONTACT</a>
                     <a href="checkout.html" class="cart active" aria-label="Cart">
-                        <svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/>
+                            <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/>
+                        </svg>
                         <span class="cart-count">0</span>
                     </a>
                 </div>
@@ -30,31 +34,47 @@
 
         <section class="checkout-page">
             <div class="checkout-container">
+
                 <h1 class="checkout-title">DIN VARUKORG</h1>
 
-                <div id="emptyCart" style="display:none;text-align:center;padding:60px 0;">
-                    <i class="fas fa-shopping-bag" style="font-size:3rem;color:#ccc;margin-bottom:20px;display:block;"></i>
-                    <h2 style="font-family:'Cormorant Garamond',serif;margin-bottom:12px;">Din varukorg är tom</h2>
-                    <p style="color:#888;margin-bottom:24px;">Lägg till några produkter för att fortsätta handla.</p>
+                <div id="emptyCart" class="empty-cart-message" style="display:none;">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h2>Din varukorg är tom</h2>
+                    <p>Lägg till några produkter för att fortsätta handla.</p>
                     <a href="shop.html" class="outline-btn">SE PRODUKTER</a>
                 </div>
 
                 <div id="cartContent" class="checkout-content" style="display:none;">
-                    <div class="checkout-form-section" id="cartItems"></div>
+
+                    <div class="checkout-form-section">
+                        <div id="cartItems"></div>
+                    </div>
+
                     <aside class="order-summary">
                         <h2>DIN BESTÄLLNING</h2>
-                        <div id="orderItems"></div>
+                        <div class="order-items" id="orderItems"></div>
                         <div class="order-totals">
-                            <div class="subtotal"><span>Delsumma</span><span id="subtotalAmount">$0.00</span></div>
-                            <div class="shipping-cost"><span>Frakt</span><span>$4.99</span></div>
-                            <div class="total"><span>Totalt</span><span id="totalAmount">$0.00</span></div>
+                            <div class="subtotal">
+                                <span>Delsumma</span>
+                                <span id="subtotalAmount">$0.00</span>
+                            </div>
+                            <div class="shipping-cost">
+                                <span>Frakt</span>
+                                <span>$4.99</span>
+                            </div>
+                            <div class="total">
+                                <span>Totalt</span>
+                                <span id="totalAmount">$0.00</span>
+                            </div>
                         </div>
                         <button class="btn-checkout" onclick="goToShopify()">SLUTFÖR KÖP</button>
                         <p class="secure-checkout"><i class="fas fa-lock"></i> Säker betalning via Shopify</p>
                     </aside>
+
                 </div>
             </div>
         </section>
+
     </main>
 
     <script src="products.js"></script>
@@ -72,24 +92,34 @@
         }
 
         emptyCart.style.display = 'none';
-        cartContent.style.display = 'flex';
+        cartContent.style.display = 'grid';
 
+        // Vänster sida — varukorgsrader
         document.getElementById('cartItems').innerHTML = cart.map(function(item) {
-            return '<div style="display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #f0f0f0;">' +
-                '<img src="' + item.image + '" style="width:80px;height:80px;object-fit:cover;">' +
-                '<div style="flex:1;"><h3 style="font-size:0.85rem;letter-spacing:0.08em;margin-bottom:4px;">' + item.name + '</h3>' +
-                '<p style="color:#888;font-size:0.8rem;">$' + item.price + '.00</p></div>' +
-                '<div style="display:flex;align-items:center;gap:12px;">' +
-                '<button onclick="changeQty(' + item.id + ',-1)" style="width:28px;height:28px;border:1px solid #ddd;background:none;cursor:pointer;font-size:1rem;">−</button>' +
-                '<span>' + item.quantity + '</span>' +
-                '<button onclick="changeQty(' + item.id + ',1)" style="width:28px;height:28px;border:1px solid #ddd;background:none;cursor:pointer;font-size:1rem;">+</button></div>' +
-                '<button onclick="removeItem(' + item.id + ')" style="background:none;border:none;cursor:pointer;color:#aaa;font-size:1.1rem;">✕</button></div>';
+            return '<div class="order-item">' +
+                '<img class="order-item-image" src="' + item.image + '" alt="' + item.name + '">' +
+                '<div class="order-item-details">' +
+                    '<p class="order-item-name">' + item.name + '</p>' +
+                    '<div class="order-item-quantity">' +
+                        '<button class="qty-btn" onclick="changeQty(' + item.id + ', -1)">−</button>' +
+                        '<span>' + item.quantity + '</span>' +
+                        '<button class="qty-btn" onclick="changeQty(' + item.id + ', 1)">+</button>' +
+                    '</div>' +
+                    '<p class="order-item-price">$' + (item.price * item.quantity).toFixed(2) + '</p>' +
+                '</div>' +
+                '<button class="remove-item-btn" onclick="removeItem(' + item.id + ')">✕</button>' +
+            '</div>';
         }).join('');
 
+        // Höger sida — summering
         document.getElementById('orderItems').innerHTML = cart.map(function(item) {
-            return '<div style="display:flex;justify-content:space-between;font-size:0.82rem;margin-bottom:8px;">' +
-                '<span>' + item.name + ' × ' + item.quantity + '</span>' +
-                '<span>$' + (item.price * item.quantity).toFixed(2) + '</span></div>';
+            return '<div class="order-item">' +
+                '<img class="order-item-image" src="' + item.image + '" alt="' + item.name + '">' +
+                '<div class="order-item-details">' +
+                    '<p class="order-item-name">' + item.name + '</p>' +
+                    '<p class="order-item-price">× ' + item.quantity + ' — $' + (item.price * item.quantity).toFixed(2) + '</p>' +
+                '</div>' +
+            '</div>';
         }).join('');
 
         var subtotal = cart.reduce(function(sum, item) { return sum + item.price * item.quantity; }, 0);
