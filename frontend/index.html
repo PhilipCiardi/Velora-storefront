@@ -12,7 +12,6 @@
 </head>
 <body>
     <main class="page-shell">
-
         <section class="hero-section">
             <nav class="top-nav">
                 <a href="index.html" class="logo">Velora</a>
@@ -22,10 +21,7 @@
                     <a href="trending.html">TRENDING</a>
                     <a href="contact.html">CONTACT</a>
                     <a href="checkout.html" class="cart" aria-label="Cart">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/>
-                            <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/>
-                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/></svg>
                         <span class="cart-count">0</span>
                     </a>
                 </div>
@@ -59,40 +55,29 @@
                 <div class="newsletter">
                     <p>JOIN OUR NEWSLETTER</p>
                     <span>Get early access to new drops and trending products.</span>
-                    <div class="email-row">
-                        <input type="email" placeholder="Your email">
-                    </div>
+                    <div class="email-row"><input type="email" placeholder="Your email"></div>
                 </div>
             </aside>
 
             <section class="product-showcase">
-
                 <article class="product-card" data-product-id="1">
                     <div class="product-image-wrap" onclick="openQuickView(1)">
-                        <img src="images/First_pick_mask.jpg" alt="LED Light Therapy Face Mask">
+                        <img src="images/First_pick_mask.jpg" alt="LED Face Mask">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
                     <div class="product-info">
-                        <div>
-                            <h2>LED FACE MASK</h2>
-                            <p class="product-desc">Professional red light therapy at home</p>
-                            <p class="price">$119.00</p>
-                        </div>
+                        <div><h2>LED FACE MASK</h2><p class="product-desc">Professional red light therapy at home</p><p class="price">$119.00</p></div>
                         <button class="add-to-cart-btn" onclick="addToCart(1)">ADD TO CART</button>
                     </div>
                 </article>
 
                 <article class="product-card" data-product-id="4">
                     <div class="product-image-wrap" onclick="openQuickView(4)">
-                        <img src="images/first_pick.jpg" alt="Pulse Gun Massage Gun">
+                        <img src="images/first_pick.jpg" alt="Pulse Gun">
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
                     <div class="product-info">
-                        <div>
-                            <h2>PULSE GUN</h2>
-                            <p class="product-desc">Compact massage gun for recovery</p>
-                            <p class="price">$69.00</p>
-                        </div>
+                        <div><h2>PULSE GUN</h2><p class="product-desc">Compact massage gun for recovery</p><p class="price">$69.00</p></div>
                         <button class="add-to-cart-btn" onclick="addToCart(4)">ADD TO CART</button>
                     </div>
                 </article>
@@ -103,27 +88,23 @@
                         <span class="quick-view">QUICK VIEW</span>
                     </div>
                     <div class="product-info">
-                        <div>
-                            <h2>RAIN CLOUD DIFFUSER</h2>
-                            <p class="product-desc">Aroma diffuser with rain effect & 7 LED colors</p>
-                            <p class="price">$49.00</p>
-                        </div>
+                        <div><h2>RAIN CLOUD DIFFUSER</h2><p class="product-desc">Aroma diffuser with rain effect & 7 LED colors</p><p class="price">$49.00</p></div>
                         <button class="add-to-cart-btn" onclick="addToCart(5)">ADD TO CART</button>
                     </div>
                 </article>
-
             </section>
         </section>
-
     </main>
 
     <div id="quickViewModal">
         <div class="qv-overlay" onclick="closeQuickView()"></div>
         <div class="qv-content">
             <button class="qv-close" onclick="closeQuickView()">✕</button>
-            <div class="qv-image-wrap">
-                <img id="qv-main-img" src="" alt="">
-                <div id="qv-thumbs" style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;"></div>
+            <div>
+                <div class="qv-image-wrap">
+                    <img id="qv-main-img" src="" alt="">
+                </div>
+                <div id="qv-thumbs" style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;padding:8px;"></div>
             </div>
             <div class="qv-details">
                 <h2 id="qv-title"></h2>
