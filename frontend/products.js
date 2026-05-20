@@ -1,66 +1,9 @@
-// ===== PRODUCTS.JS =====
-
 const products = [
-    {
-        id: 1,
-        name: "RAIN CLOUD DIFFUSER",
-        description: "Aroma diffuser med regneffekt & 7 LED-färger",
-        price: 49,
-        currency: "USD",
-        label: "TRENDING",
-        image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1974&auto=format&fit=crop",
-        category: "home"
-    },
-    {
-        id: 2,
-        name: "NECK FAN",
-        description: "Bladeless bärbar halsfläkt för sommaren",
-        price: 34,
-        currency: "USD",
-        label: "NEW",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1974&auto=format&fit=crop",
-        category: "tech"
-    },
-    {
-        id: 3,
-        name: "GLOW SERUM",
-        description: "Exfolierande ansiktsserum för glass skin",
-        price: 29,
-        currency: "USD",
-        label: "BESTSELLER",
-        image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1974&auto=format&fit=crop",
-        category: "beauty"
-    },
-    {
-        id: 4,
-        name: "PULSE GUN",
-        description: "Kompakt massagegun för återhämtning",
-        price: 69,
-        currency: "USD",
-        label: "TRENDING",
-        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1974&auto=format&fit=crop",
-        category: "wellness"
-    },
-    {
-        id: 5,
-        name: "SOLAR SHADES",
-        description: "Minimalistiska UV400 solglasögon",
-        price: 34,
-        currency: "USD",
-        label: "BESTSELLER",
-        image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=1980&auto=format&fit=crop",
-        category: "accessories"
-    },
-    {
-        id: 6,
-        name: "FROST BOTTLE",
-        description: "Isolerad drinkflaska – håller kallt i 24h",
-        price: 39,
-        currency: "USD",
-        label: "NEW",
-        image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=1974&auto=format&fit=crop",
-        category: "lifestyle"
-    }
+    { id:1, shopifyId:'15742625120630', name:"LED FACE MASK",         description:"Professional-grade red & infrared light therapy at home. Fight acne, reduce fine lines, boost collagen.", price:119, label:"NEW",        image:"images/First_pick_mask.jpg", images:["images/First_pick_mask.jpg","images/last_pick.jpg","images/Sleep.jpg","images/details.jpg"] },
+    { id:2, shopifyId:'15730092310902', name:"FROST TUMBLER",          description:"40oz insulated stainless steel tumbler. Keeps drinks cold for 24h, hot for 12h.",                         price:39,  label:"BESTSELLER",  image:"images/Blue.jpg",             images:["images/Blue.jpg","images/pink.jpg","images/red.jpg","images/four_black.jpg"] },
+    { id:3, shopifyId:'15730075500918', name:"NECK FAN",               description:"Bladeless hands-free neck fan. Ultra-quiet, 3 speed settings. USB rechargeable.",                         price:34,  label:"NEW",        image:"images/Pink_with_wind.jpg",   images:["images/Pink_with_wind.jpg","images/Green.jpg","images/Pink.jpg","images/White_background.jpg"] },
+    { id:4, shopifyId:'15730089591158', name:"PULSE GUN",              description:"Compact percussion massage gun. 30 speed settings, multiple attachments. Perfect for recovery.",           price:69,  label:"TRENDING",   image:"images/first_pick.jpg",       images:["images/first_pick.jpg","images/Back.jpg","images/Front.jpg","images/Green.jpg"] },
+    { id:5, shopifyId:'15729937219958', name:"RAIN CLOUD DIFFUSER",    description:"Simulates falling raindrops while diffusing aromatherapy oils. 7 LED colors, 2/4/8h timer.",              price:49,  label:"VIRAL",      image:"images/Yoga_girl.jpg",        images:["images/Yoga_girl.jpg","images/Bedroom.jpg","images/White_background.jpg"] },
+    { id:6, shopifyId:'15730087100790', name:"SUNSET PROJECTOR LAMP",  description:"Create a stunning golden hour glow on any wall. RGB color modes, remote & app control.",                  price:59,  label:"BESTSELLER",  image:"images/Orange.jpg",           images:["images/Orange.jpg","images/Purple.jpg","images/Yellow.jpg","images/last_pick.jpg"] }
 ];
-
 window.veloraProducts = products;

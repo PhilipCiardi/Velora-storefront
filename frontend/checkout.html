@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kassa - VELORA</title>
+    <title>Trending - VELORA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,142 +12,99 @@
 </head>
 <body>
     <main class="page-shell">
-
-        <section class="hero-section" style="height: auto; padding-bottom: 30px; min-height: unset;">
+        <section class="hero-section trending-hero">
             <nav class="top-nav">
                 <a href="index.html" class="logo">Velora</a>
                 <div class="top-links">
                     <a href="index.html">HOME</a>
                     <a href="shop.html">SHOP</a>
-                    <a href="trending.html">TRENDING</a>
+                    <a href="trending.html" class="active">TRENDING</a>
                     <a href="contact.html">CONTACT</a>
-                    <a href="checkout.html" class="cart active" aria-label="Cart">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/>
-                            <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/>
-                        </svg>
+                    <a href="checkout.html" class="cart" aria-label="Cart">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/></svg>
                         <span class="cart-count">0</span>
                     </a>
                 </div>
             </nav>
-        </section>
-
-        <section class="checkout-page">
-            <div class="checkout-container">
-
-                <h1 class="checkout-title">KASSA</h1>
-
-                <div class="empty-cart-message" style="display: none;">
-                    <i class="fas fa-shopping-bag"></i>
-                    <h2>Din varukorg är tom</h2>
-                    <p>Lägg till några produkter för att fortsätta handla.</p>
-                    <a href="shop.html" class="outline-btn">SE PRODUKTER</a>
-                </div>
-
-                <div class="checkout-content">
-
-                    <div class="checkout-form-section">
-
-                        <section class="checkout-step">
-                            <h2><span class="step-number">1</span> KONTAKTUPPGIFTER</h2>
-                            <div class="form-group">
-                                <label for="email">E-POST *</label>
-                                <input type="email" id="email" name="email" placeholder="din@email.se" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">TELEFON</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+46 70 000 00 00">
-                            </div>
-                        </section>
-
-                        <section class="checkout-step">
-                            <h2><span class="step-number">2</span> LEVERANSADRESS</h2>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="firstName">FÖRNAMN *</label>
-                                    <input type="text" id="firstName" placeholder="Förnamn" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastName">EFTERNAMN *</label>
-                                    <input type="text" id="lastName" placeholder="Efternamn" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="address">ADRESS *</label>
-                                <input type="text" id="address" placeholder="Gatuadress" required>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="postalCode">POSTNUMMER *</label>
-                                    <input type="text" id="postalCode" placeholder="123 45" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="city">ORT *</label>
-                                    <input type="text" id="city" placeholder="Stad" required>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section class="checkout-step">
-                            <h2><span class="step-number">3</span> FRAKT</h2>
-                            <div class="shipping-options">
-                                <label class="shipping-option">
-                                    <input type="radio" name="shipping" value="standard" checked>
-                                    <div class="shipping-option-content">
-                                        <span class="shipping-name">Standardfrakt</span>
-                                        <span class="shipping-time">8-15 arbetsdagar</span>
-                                    </div>
-                                    <span class="shipping-price">$4.99</span>
-                                </label>
-                                <label class="shipping-option">
-                                    <input type="radio" name="shipping" value="express">
-                                    <div class="shipping-option-content">
-                                        <span class="shipping-name">Expressfrakt</span>
-                                        <span class="shipping-time">3-7 arbetsdagar</span>
-                                    </div>
-                                    <span class="shipping-price">$9.99</span>
-                                </label>
-                            </div>
-                        </section>
-
-                        <section class="checkout-step">
-                            <h2><span class="step-number">4</span> BETALNING</h2>
-                            <div class="payment-placeholder">
-                                <i class="fas fa-lock"></i>
-                                <p>Betalningsalternativ kopplas via Shopify</p>
-                            </div>
-                        </section>
-
-                    </div>
-
-                    <aside class="order-summary">
-                        <h2>DIN BESTÄLLNING</h2>
-                        <div class="order-items"></div>
-                        <div class="order-totals">
-                            <div class="subtotal">
-                                <span>Delsumma</span>
-                                <span class="subtotal-amount">$0.00</span>
-                            </div>
-                            <div class="shipping-cost">
-                                <span>Frakt</span>
-                                <span class="shipping-amount">$4.99</span>
-                            </div>
-                            <div class="total">
-                                <span>Totalt</span>
-                                <span class="total-amount">$0.00</span>
-                            </div>
-                        </div>
-                        <button class="btn-checkout" disabled>SLUTFÖR KÖP</button>
-                        <p class="secure-checkout"><i class="fas fa-lock"></i> Säker betalning</p>
-                    </aside>
-
-                </div>
+            <div class="hero-center">
+                <h1>TRENDING NOW</h1>
+                <p>The products everyone is talking about right now.</p>
             </div>
         </section>
 
+        <section class="trending-section">
+            <div class="trending-header"><span class="section-kicker">WHAT'S HOT</span><h2>Most Wanted</h2></div>
+            <div class="trending-grid">
+
+                <article class="featured-product large" data-product-id="1" onclick="openQuickView(1)">
+                    <img src="images/First_pick_mask.jpg" alt="LED Face Mask">
+                    <div class="featured-overlay">
+                        <span>NEW</span><h3>LED LIGHT THERAPY FACE MASK</h3>
+                        <p>Professional-grade red & infrared light therapy at home.</p>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(1)" style="margin-top:16px;">ADD TO CART — $119</button>
+                    </div>
+                </article>
+
+                <article class="featured-product large" data-product-id="4" onclick="openQuickView(4)">
+                    <img src="images/first_pick.jpg" alt="Pulse Gun">
+                    <div class="featured-overlay">
+                        <span>TRENDING</span><h3>PULSE GUN MASSAGE GUN</h3>
+                        <p>Compact, powerful recovery tool used by athletes worldwide.</p>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(4)" style="margin-top:16px;">ADD TO CART — $69</button>
+                    </div>
+                </article>
+
+                <article class="featured-product" data-product-id="5" onclick="openQuickView(5)">
+                    <img src="images/Yoga_girl.jpg" alt="Rain Cloud Diffuser">
+                    <div class="featured-overlay">
+                        <span>VIRAL</span><h3>RAIN CLOUD DIFFUSER</h3>
+                        <p>The aroma diffuser taking TikTok by storm.</p>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(5)" style="margin-top:16px;">ADD TO CART — $49</button>
+                    </div>
+                </article>
+
+                <article class="featured-product" data-product-id="6" onclick="openQuickView(6)">
+                    <img src="images/Orange.jpg" alt="Sunset Projector Lamp">
+                    <div class="featured-overlay">
+                        <span>BESTSELLER</span><h3>SUNSET PROJECTOR LAMP</h3>
+                        <p>Create a golden hour glow in any room.</p>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(6)" style="margin-top:16px;">ADD TO CART — $59</button>
+                    </div>
+                </article>
+
+                <article class="featured-product" data-product-id="3" onclick="openQuickView(3)">
+                    <img src="images/Pink_with_wind.jpg" alt="Neck Fan">
+                    <div class="featured-overlay">
+                        <span>NEW</span><h3>NECK FAN</h3>
+                        <p>Bladeless & portable. Stay cool anywhere this summer.</p>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart(3)" style="margin-top:16px;">ADD TO CART — $34</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
     </main>
 
+    <div id="quickViewModal">
+        <div class="qv-overlay" onclick="closeQuickView()"></div>
+        <div class="qv-content">
+            <button class="qv-close" onclick="closeQuickView()">✕</button>
+            <div class="qv-image-wrap">
+                <img id="qv-main-img" src="" alt="">
+                <div id="qv-thumbs" style="display:flex;gap:8px;margin-top:12px;"></div>
+            </div>
+            <div class="qv-details">
+                <span class="product-label" id="qv-label"></span>
+                <h2 id="qv-title"></h2>
+                <p class="product-desc" id="qv-desc"></p>
+                <p class="price" id="qv-price"></p>
+                <button class="add-to-cart-btn" id="qv-cart-btn">ADD TO CART</button>
+                <p class="qv-secure"><i class="fas fa-lock"></i> Secure checkout via Shopify</p>
+            </div>
+        </div>
+    </div>
+
     <script src="products.js"></script>
-    <script src="checkout.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
