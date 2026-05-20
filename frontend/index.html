@@ -160,7 +160,7 @@
     </div>
 
     <script>
-    var products = {
+    var quickViewProducts = {
         mask: {
             title: 'LED LIGHT THERAPY FACE MASK',
             desc: 'Professional-grade red & infrared light therapy at home. Fight acne, reduce fine lines, and boost collagen in just 10 minutes a day. 3000mAh cordless battery with auto-off timer.',
@@ -188,7 +188,7 @@
     };
 
     function openQuickView(id) {
-        var p = products[id];
+        var p = quickViewProducts[id];
         document.getElementById('qv-title').textContent = p.title;
         document.getElementById('qv-desc').textContent = p.desc;
         document.getElementById('qv-price').textContent = p.price;
