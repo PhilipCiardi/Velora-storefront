@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+        <a href="index.html" onclick="closeMobileMenu()">HOME</a>
+        <a href="shop.html" onclick="closeMobileMenu()">SHOP</a>
+        <a href="trending.html" onclick="closeMobileMenu()">TRENDING</a>
+        <a href="contact.html" onclick="closeMobileMenu()">CONTACT</a>
+        <a href="checkout.html" class="cart" onclick="closeMobileMenu()">
+            <svg viewBox="0 0 24 24" fill="none" style="width:24px;height:24px;"><path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/></svg>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+
     <main class="page-shell">
         <section class="hero-section trending-hero">
             <nav class="top-nav">
@@ -25,6 +38,9 @@
                         <span class="cart-count">0</span>
                     </a>
                 </div>
+                <button class="hamburger" onclick="openMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
             <div class="hero-center">
                 <h1>TRENDING NOW</h1>
@@ -50,7 +66,7 @@
                     <div class="featured-overlay">
                         <h3>PULSE GUN MASSAGE GUN</h3>
                         <p>Compact, powerful recovery tool used by athletes worldwide.</p>
-                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(4)" style="margin-top:16px;">VÄLJ FÄRG — $69</button>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(4)" style="margin-top:16px;">ADD TO CART — $69</button>
                     </div>
                 </article>
 
@@ -59,7 +75,7 @@
                     <div class="featured-overlay">
                         <h3>RAIN CLOUD DIFFUSER</h3>
                         <p>The aroma diffuser taking TikTok by storm.</p>
-                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(5)" style="margin-top:16px;">VÄLJ FÄRG — $49</button>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(5)" style="margin-top:16px;">ADD TO CART — $49</button>
                     </div>
                 </article>
 
@@ -77,7 +93,7 @@
                     <div class="featured-overlay">
                         <h3>NECK FAN</h3>
                         <p>Bladeless & portable. Stay cool anywhere this summer.</p>
-                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(3)" style="margin-top:16px;">VÄLJ FÄRG — $34</button>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(3)" style="margin-top:16px;">ADD TO CART — $34</button>
                     </div>
                 </article>
 
@@ -104,6 +120,10 @@
         </div>
     </div>
 
+    <script>
+    function openMobileMenu() { document.getElementById("mobileMenu").classList.add("active"); }
+    function closeMobileMenu() { document.getElementById("mobileMenu").classList.remove("active"); }
+    </script>
     <script src="products.js"></script>
     <script src="script.js"></script>
 </body>

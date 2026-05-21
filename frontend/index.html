@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+        <a href="index.html" onclick="closeMobileMenu()">HOME</a>
+        <a href="shop.html" onclick="closeMobileMenu()">SHOP</a>
+        <a href="trending.html" onclick="closeMobileMenu()">TRENDING</a>
+        <a href="contact.html" onclick="closeMobileMenu()">CONTACT</a>
+        <a href="checkout.html" class="cart" onclick="closeMobileMenu()">
+            <svg viewBox="0 0 24 24" fill="none" style="width:24px;height:24px;"><path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/></svg>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+
     <main class="page-shell">
         <section class="hero-section">
             <nav class="top-nav">
@@ -25,14 +38,17 @@
                         <span class="cart-count">0</span>
                     </a>
                 </div>
+                <button class="hamburger" onclick="openMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
-            <button class="arrow left-arrow">‹</button>
-            <button class="arrow right-arrow">›</button>
+
             <div class="hero-center">
                 <h1>PRODUCTS PEOPLE NOTICE.</h1>
                 <p>A curated storefront for trending products, premium aesthetics and modern shopping experiences.</p>
                 <a href="shop.html" class="outline-btn">SHOP NOW</a>
             </div>
+
             <div class="slider-lines">
                 <span class="active"></span><span></span><span></span>
             </div>
@@ -75,7 +91,7 @@
                     </div>
                     <div class="product-info">
                         <div><h2>PULSE GUN</h2><p class="product-desc">Compact massage gun for recovery</p><p class="price">$69.00</p></div>
-                        <button class="add-to-cart-btn" onclick="openQuickView(4)">VÄLJ FÄRG</button>
+                        <button class="add-to-cart-btn" onclick="openQuickView(4)">ADD TO CART</button>
                     </div>
                 </article>
 
@@ -86,7 +102,7 @@
                     </div>
                     <div class="product-info">
                         <div><h2>RAIN CLOUD DIFFUSER</h2><p class="product-desc">Aroma diffuser with rain effect & 7 LED colors</p><p class="price">$49.00</p></div>
-                        <button class="add-to-cart-btn" onclick="openQuickView(5)">VÄLJ FÄRG</button>
+                        <button class="add-to-cart-btn" onclick="openQuickView(5)">ADD TO CART</button>
                     </div>
                 </article>
             </section>
@@ -112,6 +128,10 @@
         </div>
     </div>
 
+    <script>
+    function openMobileMenu() { document.getElementById("mobileMenu").classList.add("active"); }
+    function closeMobileMenu() { document.getElementById("mobileMenu").classList.remove("active"); }
+    </script>
     <script src="products.js"></script>
     <script src="script.js"></script>
 </body>

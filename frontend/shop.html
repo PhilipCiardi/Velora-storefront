@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+        <a href="index.html" onclick="closeMobileMenu()">HOME</a>
+        <a href="shop.html" onclick="closeMobileMenu()">SHOP</a>
+        <a href="trending.html" onclick="closeMobileMenu()">TRENDING</a>
+        <a href="contact.html" onclick="closeMobileMenu()">CONTACT</a>
+        <a href="checkout.html" class="cart" onclick="closeMobileMenu()">
+            <svg viewBox="0 0 24 24" fill="none" style="width:24px;height:24px;"><path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/></svg>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+
     <main class="page-shell">
         <section class="hero-section shop-hero">
             <nav class="top-nav">
@@ -25,6 +38,9 @@
                         <span class="cart-count">0</span>
                     </a>
                 </div>
+                <button class="hamburger" onclick="openMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
             <div class="hero-center">
                 <h1>SHOP ALL</h1>
@@ -46,27 +62,27 @@
                 </article>
 
                 <article class="product-card" data-product-id="2" onclick="openQuickView(2)">
-                    <div class="product-image-wrap"><img src="images/Blue.jpg" alt="Frost Tumbler"><span class="quick-view">QUICK VIEW</span></div>
+                    <div class="product-image-wrap"><img src="images/Blue_frost.jpg" alt="Frost Tumbler"><span class="quick-view">QUICK VIEW</span></div>
                     <div class="product-info"><div><h2>FROST TUMBLER</h2><p class="product-desc">Insulated 40oz tumbler — keeps cold for 24h</p><p class="price">$39.00</p></div>
-                    <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(2)">VÄLJ FÄRG</button></div>
+                    <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(2)">ADD TO CART</button></div>
                 </article>
 
                 <article class="product-card" data-product-id="3" onclick="openQuickView(3)">
                     <div class="product-image-wrap"><img src="images/Pink_with_wind.jpg" alt="Neck Fan"><span class="quick-view">QUICK VIEW</span></div>
                     <div class="product-info"><div><h2>NECK FAN</h2><p class="product-desc">Bladeless portable neck fan for summer</p><p class="price">$34.00</p></div>
-                    <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(3)">VÄLJ FÄRG</button></div>
+                    <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(3)">ADD TO CART</button></div>
                 </article>
 
                 <article class="product-card" data-product-id="4" onclick="openQuickView(4)">
                     <div class="product-image-wrap"><img src="images/first_pick.jpg" alt="Pulse Gun"><span class="quick-view">QUICK VIEW</span></div>
                     <div class="product-info"><div><h2>PULSE GUN</h2><p class="product-desc">Compact massage gun for recovery</p><p class="price">$69.00</p></div>
-                    <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(4)">VÄLJ FÄRG</button></div>
+                    <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(4)">ADD TO CART</button></div>
                 </article>
 
                 <article class="product-card" data-product-id="5" onclick="openQuickView(5)">
                     <div class="product-image-wrap"><img src="images/Yoga_girl.jpg" alt="Rain Cloud Diffuser"><span class="quick-view">QUICK VIEW</span></div>
                     <div class="product-info"><div><h2>RAIN CLOUD DIFFUSER</h2><p class="product-desc">Aroma diffuser with rain effect & 7 LED colors</p><p class="price">$49.00</p></div>
-                    <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(5)">VÄLJ FÄRG</button></div>
+                    <button class="add-to-cart-btn" onclick="event.stopPropagation(); openQuickView(5)">ADD TO CART</button></div>
                 </article>
 
                 <article class="product-card" data-product-id="6" onclick="openQuickView(6)">
@@ -98,6 +114,10 @@
         </div>
     </div>
 
+    <script>
+    function openMobileMenu() { document.getElementById("mobileMenu").classList.add("active"); }
+    function closeMobileMenu() { document.getElementById("mobileMenu").classList.remove("active"); }
+    </script>
     <script src="products.js"></script>
     <script src="script.js"></script>
 </body>
