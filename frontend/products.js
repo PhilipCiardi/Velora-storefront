@@ -2,7 +2,6 @@ const products = [
     {
         id: 1,
         shopifyId: '15742625120630',
-        defaultVariantId: '57829675565430',
         name: "LED FACE MASK",
         description: "Professional-grade red & infrared light therapy at home. Fight acne, reduce fine lines, boost collagen.",
         price: 119,
@@ -18,12 +17,12 @@ const products = [
         description: "40oz insulated stainless steel tumbler. Keeps drinks cold for 24h, hot for 12h.",
         price: 39,
         label: "BESTSELLER",
-        image: "images/Blue.jpg",
+        image: "images/red.jpg",
         images: ["images/red.jpg","images/pink.jpg","images/Blue.jpg"],
         variants: [
-            { name: "Rött",  variantId: "57920208929142", image: "images/red.jpg" },
-            { name: "Rosa",  variantId: "57920208961910", image: "images/pink.jpg" },
-            { name: "Blå",   variantId: "57920208994678", image: "images/Blue.jpg" }
+            { name: "Red",  variantId: "57920208929142", image: "images/red.jpg" },
+            { name: "Pink", variantId: "57920208961910", image: "images/pink.jpg" },
+            { name: "Blue", variantId: "57920208994678", image: "images/Blue.jpg" }
         ]
     },
     {
@@ -34,11 +33,11 @@ const products = [
         price: 34,
         label: "NEW",
         image: "images/Pink_with_wind.jpg",
-        images: ["images/Pink_with_wind.jpg","images/Green.jpg","images/Pink.jpg"],
+        images: ["images/White.jpg","images/Pink_with_wind.jpg","images/Green.jpg"],
         variants: [
-            { name: "Vitt",  variantId: "57920295829878", image: "images/Pink_with_wind.jpg" },
-            { name: "Rosa",  variantId: "57920295862646", image: "images/Pink.jpg" },
-            { name: "Grön",  variantId: "57920295895414", image: "images/Green.jpg" }
+            { name: "White", variantId: "57920295829878", image: "images/White.jpg" },
+            { name: "Pink",  variantId: "57920295862646", image: "images/Pink_with_wind.jpg" },
+            { name: "Green", variantId: "57920295895414", image: "images/Green.jpg" }
         ]
     },
     {
@@ -49,11 +48,10 @@ const products = [
         price: 69,
         label: "TRENDING",
         image: "images/first_pick.jpg",
-        images: ["images/first_pick.jpg","images/Back.jpg","images/Front.jpg"],
+        images: ["images/first_pick.jpg","images/Black_pulse_gun.jpg"],
         variants: [
-            { name: "Grön",  variantId: "57920150929782", image: "images/first_pick.jpg" },
-            { name: "Rött",  variantId: "57920150962550", image: "images/Back.jpg" },
-            { name: "Svart", variantId: "57920150995318", image: "images/Front.jpg" }
+            { name: "Green", variantId: "57920150929782", image: "images/first_pick.jpg" },
+            { name: "Black", variantId: "57920150995318", image: "images/Black_pulse_gun.jpg" }
         ]
     },
     {
@@ -64,18 +62,17 @@ const products = [
         price: 49,
         label: "VIRAL",
         image: "images/Yoga_girl.jpg",
-        images: ["images/Yoga_girl.jpg","images/Bedroom.jpg","images/White_background.jpg"],
+        images: ["images/White_background.jpg","images/Yoga_girl.jpg","images/Purple_one.jpg","images/Bedroom.jpg"],
         variants: [
-            { name: "Vitt",  variantId: "57920175636854", image: "images/White_background.jpg" },
-            { name: "Rosa",  variantId: "57920175669622", image: "images/Yoga_girl.jpg" },
-            { name: "Lila",  variantId: "57920175702390", image: "images/Bedroom.jpg" },
-            { name: "Grön",  variantId: "57920175735158", image: "images/Yoga_girl.jpg" }
+            { name: "White",  variantId: "57920175636854", image: "images/White_background.jpg" },
+            { name: "Pink",   variantId: "57920175669622", image: "images/Yoga_girl.jpg" },
+            { name: "Purple", variantId: "57920175702390", image: "images/Purple_one.jpg" },
+            { name: "Green",  variantId: "57920175735158", image: "images/Bedroom.jpg" }
         ]
     },
     {
         id: 6,
         shopifyId: '15730087100790',
-        defaultVariantId: '57830360908150',
         name: "SUNSET PROJECTOR LAMP",
         description: "Create a stunning golden hour glow on any wall. RGB color modes, remote & app control.",
         price: 59,
