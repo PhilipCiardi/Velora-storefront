@@ -70,6 +70,8 @@ function openQuickView(productId) {
         selectedVariantId = product.variants[0].variantId;
         selectedVariantName = product.variants[0].name;
         selectedVariantImage = product.variants[0].image;
+    } else if (product.defaultVariantId) {
+        selectedVariantId = product.defaultVariantId;
     }
 
     var labelEl = document.getElementById('qv-label');

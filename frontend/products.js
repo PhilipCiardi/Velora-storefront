@@ -2,6 +2,7 @@ const products = [
     {
         id: 1,
         shopifyId: '15742625120630',
+        defaultVariantId: '57892239343990',
         name: "LED FACE MASK",
         description: "Professional-grade red & infrared light therapy at home. Fight acne, reduce fine lines, boost collagen.",
         price: 119,
@@ -74,6 +75,7 @@ const products = [
     {
         id: 6,
         shopifyId: '15730087100790',
+        defaultVariantId: '57830379258230',
         name: "SUNSET PROJECTOR LAMP",
         description: "Create a stunning golden hour glow on any wall. RGB color modes, remote & app control.",
         price: 59,
