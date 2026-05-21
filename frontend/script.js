@@ -11,12 +11,12 @@ function saveCart(cart) {
     updateCartCount();
 }
 
-function addToCart(productId, variantId, variantName) {
+function addToCart(productId, variantId, variantName, variantImage) {
     var product = window.veloraProducts.find(function(p) { return p.id === productId; });
     if (!product) return;
 
     var cart = getCart();
-    var cartKey = variantId ? productId + '_' + variantId : productId;
+    var cartKey = variantId ? productId + '_' + variantId : String(productId);
     var existing = cart.find(function(item) { return item.cartKey === cartKey; });
 
     if (existing) {
@@ -30,7 +30,7 @@ function addToCart(productId, variantId, variantName) {
             variantName: variantName || null,
             name: product.name + (variantName ? ' — ' + variantName : ''),
             price: product.price,
-            image: product.image,
+            image: variantImage || product.image,
             quantity: 1
         });
     }
@@ -64,11 +64,12 @@ function openQuickView(productId) {
     var images = product.images || [product.image];
     var selectedVariantId = null;
     var selectedVariantName = null;
+    var selectedVariantImage = product.image;
 
-    // Om produkten har varianter, välj första som default
     if (product.variants && product.variants.length > 0) {
         selectedVariantId = product.variants[0].variantId;
         selectedVariantName = product.variants[0].name;
+        selectedVariantImage = product.variants[0].image;
     }
 
     var labelEl = document.getElementById('qv-label');
@@ -76,13 +77,13 @@ function openQuickView(productId) {
     document.getElementById('qv-title').textContent = product.name;
     document.getElementById('qv-desc').textContent = product.description;
     document.getElementById('qv-price').textContent = '$' + product.price + '.00';
-    document.getElementById('qv-main-img').src = product.variants ? product.variants[0].image : images[0];
+    document.getElementById('qv-main-img').src = selectedVariantImage;
 
     // Färgväljare
     var variantEl = document.getElementById('qv-variants');
     if (variantEl) {
         if (product.variants && product.variants.length > 0) {
-            variantEl.innerHTML = '<p style="font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.6);margin-bottom:10px;">VÄLJ FÄRG</p>' +
+            variantEl.innerHTML = '<p style="font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.6);margin-bottom:10px;">COLOR</p>' +
                 product.variants.map(function(v, i) {
                     return '<button onclick="selectVariant(' + productId + ',\'' + v.variantId + '\',\'' + v.name + '\',\'' + v.image + '\')" ' +
                         'id="vbtn-' + v.variantId + '" ' +
@@ -97,16 +98,14 @@ function openQuickView(productId) {
         }
     }
 
+    // Add to Cart knapp
     var btn = document.getElementById('qv-cart-btn');
     btn.textContent = 'ADD TO CART';
     btn.onclick = function() {
-        addToCart(productId, selectedVariantId, selectedVariantName);
+        addToCart(productId, selectedVariantId, selectedVariantName, selectedVariantImage);
         btn.textContent = 'ADDED ✓';
         setTimeout(function() { btn.textContent = 'ADD TO CART'; }, 1500);
     };
-
-    // Spara vald variant globalt
-    window._selectedVariant = { id: selectedVariantId, name: selectedVariantName };
 
     // Thumbnails
     var thumbsEl = document.getElementById('qv-thumbs');
@@ -128,8 +127,6 @@ function openQuickView(productId) {
 }
 
 function selectVariant(productId, variantId, variantName, variantImage) {
-    window._selectedVariant = { id: variantId, name: variantName };
-
     // Uppdatera huvudbild
     document.getElementById('qv-main-img').src = variantImage;
 
@@ -146,10 +143,10 @@ function selectVariant(productId, variantId, variantName, variantImage) {
         activeBtn.style.color = 'black';
     }
 
-    // Uppdatera Add to Cart-knappen
+    // Uppdatera Add to Cart med vald variant
     var btn = document.getElementById('qv-cart-btn');
     btn.onclick = function() {
-        addToCart(productId, variantId, variantName);
+        addToCart(productId, variantId, variantName, variantImage);
         btn.textContent = 'ADDED ✓';
         setTimeout(function() { btn.textContent = 'ADD TO CART'; }, 1500);
     };
