@@ -17,12 +17,12 @@ const products = [
         description: "40oz insulated stainless steel tumbler. Keeps drinks cold for 24h, hot for 12h.",
         price: 39,
         label: "BESTSELLER",
-        image: "images/red.jpg",
-        images: ["images/red.jpg","images/pink.jpg","images/Blue.jpg"],
+        image: "images/Blue_frost.jpg",
+        images: ["images/Blue_frost.jpg","images/red_frost.jpg","images/pink_frost.jpg","images/four_black.jpg"],
         variants: [
-            { name: "Red",  variantId: "57920208929142", image: "images/red.jpg" },
-            { name: "Pink", variantId: "57920208961910", image: "images/pink.jpg" },
-            { name: "Blue", variantId: "57920208994678", image: "images/Blue.jpg" }
+            { name: "Blue",  variantId: "57920208994678", image: "images/Blue_frost.jpg" },
+            { name: "Red",   variantId: "57920208929142", image: "images/red_frost.jpg" },
+            { name: "Pink",  variantId: "57920208961910", image: "images/pink_frost.jpg" }
         ]
     },
     {
@@ -33,11 +33,11 @@ const products = [
         price: 34,
         label: "NEW",
         image: "images/Pink_with_wind.jpg",
-        images: ["images/White.jpg","images/Pink_with_wind.jpg","images/Green.jpg"],
+        images: ["images/Pink_with_wind.jpg","images/Pink_fan.jpg","images/White_fan.jpg","images/Green_fan.jpg"],
         variants: [
-            { name: "White", variantId: "57920295829878", image: "images/White.jpg" },
-            { name: "Pink",  variantId: "57920295862646", image: "images/Pink_with_wind.jpg" },
-            { name: "Green", variantId: "57920295895414", image: "images/Green.jpg" }
+            { name: "Pink",  variantId: "57920295862646", image: "images/Pink_fan.jpg" },
+            { name: "White", variantId: "57920295829878", image: "images/White_fan.jpg" },
+            { name: "Green", variantId: "57920295895414", image: "images/Green_fan.jpg" }
         ]
     },
     {
@@ -48,9 +48,10 @@ const products = [
         price: 69,
         label: "TRENDING",
         image: "images/first_pick.jpg",
-        images: ["images/first_pick.jpg","images/Black_pulse_gun.jpg"],
+        images: ["images/first_pick.jpg","images/Back.jpg","images/Front.jpg","images/Green_Pulse_Gun.jpg","images/Red_Pulse_Gun.jpg","images/Black_pulse_gun.jpg"],
         variants: [
-            { name: "Green", variantId: "57920150929782", image: "images/first_pick.jpg" },
+            { name: "Green", variantId: "57920150929782", image: "images/Green_Pulse_Gun.jpg" },
+            { name: "Red",   variantId: "57920150962550", image: "images/Red_Pulse_Gun.jpg" },
             { name: "Black", variantId: "57920150995318", image: "images/Black_pulse_gun.jpg" }
         ]
     },
@@ -62,7 +63,7 @@ const products = [
         price: 49,
         label: "VIRAL",
         image: "images/Yoga_girl.jpg",
-        images: ["images/White_background.jpg","images/Yoga_girl.jpg","images/Purple_one.jpg","images/Bedroom.jpg"],
+        images: ["images/Yoga_girl.jpg","images/Bedroom.jpg","images/White_background.jpg","images/Purple_one.jpg"],
         variants: [
             { name: "White",  variantId: "57920175636854", image: "images/White_background.jpg" },
             { name: "Pink",   variantId: "57920175669622", image: "images/Yoga_girl.jpg" },
