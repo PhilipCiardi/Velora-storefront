@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varukorg - VELORA</title>
+    <title>Cart - VELORA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -11,8 +11,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="page-shell">
 
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+        <a href="index.html" onclick="closeMobileMenu()">HOME</a>
+        <a href="shop.html" onclick="closeMobileMenu()">SHOP</a>
+        <a href="trending.html" onclick="closeMobileMenu()">TRENDING</a>
+        <a href="contact.html" onclick="closeMobileMenu()">CONTACT</a>
+        <a href="checkout.html" class="cart" onclick="closeMobileMenu()">
+            <svg viewBox="0 0 24 24" fill="none" style="width:24px;height:24px;"><path d="M6 8h12l-1 12H7L6 8Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/></svg>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+
+    <main class="page-shell">
         <section class="hero-section" style="height:auto; padding-bottom:30px; min-height:unset;">
             <nav class="top-nav">
                 <a href="index.html" class="logo">Velora</a>
@@ -29,55 +41,61 @@
                         <span class="cart-count">0</span>
                     </a>
                 </div>
+                <button class="hamburger" onclick="openMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
         </section>
 
         <section class="checkout-page">
             <div class="checkout-container">
 
-                <h1 class="checkout-title">DIN VARUKORG</h1>
+                <h1 class="checkout-title">YOUR CART</h1>
 
                 <div id="emptyCart" class="empty-cart-message" style="display:none;">
                     <i class="fas fa-shopping-bag"></i>
-                    <h2>Din varukorg är tom</h2>
-                    <p>Lägg till några produkter för att fortsätta handla.</p>
-                    <a href="shop.html" class="outline-btn">SE PRODUKTER</a>
+                    <h2>Your cart is empty</h2>
+                    <p>Add some products to continue shopping.</p>
+                    <a href="shop.html" class="outline-btn">VIEW PRODUCTS</a>
                 </div>
 
                 <div id="cartContent" class="checkout-content" style="display:none;">
 
                     <div class="checkout-form-section" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); backdrop-filter:blur(14px); padding:30px;">
-                        <h2 style="font-size:12px; font-weight:700; letter-spacing:4px; margin-bottom:24px; color:white;">DINA VAROR</h2>
+                        <h2 style="font-size:12px; font-weight:700; letter-spacing:4px; margin-bottom:24px; color:white;">YOUR ITEMS</h2>
                         <div id="cartItems"></div>
                     </div>
 
                     <aside class="order-summary">
-                        <h2>DIN BESTÄLLNING</h2>
+                        <h2>ORDER SUMMARY</h2>
                         <div class="order-items" id="orderItems"></div>
                         <div class="order-totals">
                             <div class="subtotal">
-                                <span>Delsumma</span>
+                                <span>Subtotal</span>
                                 <span id="subtotalAmount">$0.00</span>
                             </div>
                             <div class="shipping-cost">
-                                <span>Frakt</span>
+                                <span>Shipping</span>
                                 <span>$4.99</span>
                             </div>
                             <div class="total">
-                                <span>Totalt</span>
+                                <span>Total</span>
                                 <span id="totalAmount">$0.00</span>
                             </div>
                         </div>
-                        <button class="btn-checkout" onclick="goToShopify()">SLUTFÖR KÖP</button>
-                        <p class="secure-checkout"><i class="fas fa-lock"></i> Säker betalning via Shopify</p>
+                        <button class="btn-checkout" onclick="goToShopify()">CHECKOUT</button>
+                        <p class="secure-checkout"><i class="fas fa-lock"></i> Secure payment via Shopify</p>
                     </aside>
 
                 </div>
             </div>
         </section>
-
     </main>
 
+    <script>
+    function openMobileMenu() { document.getElementById("mobileMenu").classList.add("active"); }
+    function closeMobileMenu() { document.getElementById("mobileMenu").classList.remove("active"); }
+    </script>
     <script src="products.js"></script>
     <script src="script.js"></script>
     <script>
@@ -101,13 +119,13 @@
                 '<div class="order-item-details">' +
                     '<p class="order-item-name">' + item.name + '</p>' +
                     '<div class="order-item-quantity">' +
-                        '<button class="qty-btn" onclick="changeQty(' + item.id + ', -1)">−</button>' +
+                        '<button class="qty-btn" onclick="changeQty(\'' + item.cartKey + '\', -1)">−</button>' +
                         '<span>' + item.quantity + '</span>' +
-                        '<button class="qty-btn" onclick="changeQty(' + item.id + ', 1)">+</button>' +
+                        '<button class="qty-btn" onclick="changeQty(\'' + item.cartKey + '\', 1)">+</button>' +
                     '</div>' +
                     '<p class="order-item-price">$' + (item.price * item.quantity).toFixed(2) + '</p>' +
                 '</div>' +
-                '<button class="remove-item-btn" onclick="removeItem(' + item.id + ')">✕</button>' +
+                '<button class="remove-item-btn" onclick="removeItem(\'' + item.cartKey + '\')">✕</button>' +
             '</div>';
         }).join('');
 
@@ -126,19 +144,19 @@
         document.getElementById('totalAmount').textContent = '$' + (subtotal + 4.99).toFixed(2);
     }
 
-    function changeQty(productId, change) {
+    function changeQty(cartKey, change) {
         var cart = JSON.parse(localStorage.getItem('veloraCart')) || [];
-        var item = cart.find(function(i) { return i.id === productId; });
+        var item = cart.find(function(i) { return i.cartKey === cartKey; });
         if (!item) return;
         item.quantity += change;
-        if (item.quantity <= 0) cart = cart.filter(function(i) { return i.id !== productId; });
+        if (item.quantity <= 0) cart = cart.filter(function(i) { return i.cartKey !== cartKey; });
         localStorage.setItem('veloraCart', JSON.stringify(cart));
         updateCartCount();
         renderCart();
     }
 
-    function removeItem(productId) {
-        var cart = (JSON.parse(localStorage.getItem('veloraCart')) || []).filter(function(i) { return i.id !== productId; });
+    function removeItem(cartKey) {
+        var cart = (JSON.parse(localStorage.getItem('veloraCart')) || []).filter(function(i) { return i.cartKey !== cartKey; });
         localStorage.setItem('veloraCart', JSON.stringify(cart));
         updateCartCount();
         renderCart();
@@ -147,7 +165,10 @@
     function goToShopify() {
         var cart = JSON.parse(localStorage.getItem('veloraCart')) || [];
         if (cart.length === 0) return;
-        var items = cart.map(function(item) { return item.shopifyId + ':' + item.quantity; }).join(',');
+        var items = cart.map(function(item) {
+            var id = item.variantId || item.shopifyId;
+            return id + ':' + item.quantity;
+        }).join(',');
         window.location.href = 'https://velora-11488.myshopify.com/cart/' + items;
     }
 
